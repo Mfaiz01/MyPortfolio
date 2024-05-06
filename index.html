@@ -53,6 +53,8 @@
                 <li><a href="#education" class="t-white roboto">Education</a></li>
                 <li><a href="#projects" class="t-white roboto">Projects</a></li>
                 <li><a href="#contact" class="t-white roboto">Contact</a></li>
+                <li><a href="#certifications" class="t-white roboto">certifications</a></li>
+                
             </ul>
         </div>
     </nav>
@@ -286,6 +288,63 @@
         </div>
     </section>
 
+<!-- Modal for displaying certificate details -->
+<div id="certificate-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="certificate-full-image" src="" alt="">
+        <div class="certification-details">
+            <h2 id="certificate-title" class="t-white poppins"></h2>
+            <p id="certificate-description" class="t-white poppins"></p>
+        </div>
+        <a id="download-link" class="download-link" href="#" download>Download Certificate</a>
+    </div>
+</div>
+
+ <!-- Certification Section -->
+ <section id="certifications">
+    <h1 class="t-center my-2 t-white f-2">Certifications</h1>
+    <div class="certifications-container">
+        <!-- Certification Item 1 -->
+        <div class="certification-item">
+            <img class="certification-image" src="images\c1.jpg" alt="Web Development Certificate">
+            <div class="certification-details">
+                <h2 class="t-white poppins">Web Development Certification</h2>
+                <p class="t-white poppins">Issued by XYZ Online Academy</p>
+                <p class="t-white poppins">Completion Date: January 2024</p>
+                <button class="download-button" onclick="downloadCertificate('images/c1.jpg')">Download Certificate</button>
+            </div>
+        </div>
+        <!-- Certification Item 2 -->
+        <div class="certification-item">
+            <img class="certification-image" src="images/c2.jpg" alt="Graphic Design Certificate">
+            <div class="certification-details">
+                <h2 class="t-white poppins">Graphic Design Certification</h2>
+                <p class="t-white poppins">Issued by ABC Design Institute</p>
+                <p class="t-white poppins">Completion Date: February 2024</p>
+                <button class="download-button" onclick="downloadCertificate('images/c2.jpg')">Download Certificate</button>
+            </div>
+        </div>
+        <!-- Add more certification items as needed -->
+    </div>
+</section>
+
+<script>
+    // Function to handle certificate download
+    function downloadCertificate(imageSrc) {
+        // Create an anchor element
+        var link = document.createElement('a');
+        link.href = imageSrc;
+        link.download = 'certificate.jpg'; // Set the default download filename
+        document.body.appendChild(link);
+        link.click(); // Trigger the click event to initiate download
+        document.body.removeChild(link); // Clean up the anchor element
+    }
+</script>
+
+
+
+
    <!-- Contact Me Section -->
 <section id="contact" class="m-b-1">
     <h1 class="t-center my-2 t-white f-2">Contact Me</h1>
@@ -321,6 +380,7 @@
             <li><a href="#education" class="poppinss">education</a></li>
             <li><a href="#projects" class="poppinss">Projects</a></li>
             <li><a href="#contact" class="poppinss">Contact</a></li>
+            <li><a href="#certifications" class="poppinss">certifications</a></li>
         </ul>
         <ul class="flex s-center w-80 font-awesome ">
             <a href="https://www.linkedin.com/in/mohammed-faiz-pes/">
