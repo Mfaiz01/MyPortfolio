@@ -646,10 +646,15 @@ ul li a:hover {
     width: calc(50% - 20px); /* Adjust width for responsiveness */
     background-color: #1f1f38;
     border-radius: 10px;
-    margin: 10px;
+    margin: 20px;
     padding: 20px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.5s ease-out forwards; /* Animation for fade-in effect */
+    transition: transform 0.3s ease; /* Add transition effect */
+}
+
+.milestone-item:hover {
+    transform: translateY(-5px); /* Add hover effect */
 }
 
 .milestone-content {
@@ -658,25 +663,24 @@ ul li a:hover {
 
 .milestone-content h2 {
     color: #4db5ff;
-    margin-bottom: 5px;
-    animation: slideInLeft 0.5s ease-out forwards; /* Animation for slide-in from left */
+    margin-bottom: 10px;
+    font-size: 1.5rem; /* Increase font size for title */
 }
 
 .milestone-content p {
     color: #ddd;
-    margin-bottom: 5px;
-    font-size: 16px;
-    animation: slideInRight 0.5s ease-out forwards; /* Animation for slide-in from right */
+    margin-bottom: 10px;
+    font-size: 1rem; /* Increase font size for text */
 }
 
 .college-name {
     flex: 1; /* Allow college name to grow */
-    margin-left: 20px; /* Add margin between education and college name */
+    margin-top: 10px; /* Add margin at the top */
 }
 
 .college-name p {
     margin-bottom: 5px;
-    animation: fadeIn 0.5s ease-out forwards; /* Animation for fade-in effect */
+    font-size: 0.9rem; /* Decrease font size */
 }
 
 /* Add your CSS animations here */
@@ -699,16 +703,15 @@ ul li a:hover {
 
 @media (max-width: 1024px) {
     .milestone-item {
-        width: calc(50% - 20px); /* Adjust width for tablets */
+        width: calc(50% - 40px); /* Adjust width for tablets */
     }
 }
 
 @media (max-width: 768px) {
     .milestone-item {
-        width: calc(100% - 20px); /* Adjust width for smaller screens */
+        width: calc(100% - 40px); /* Adjust width for smaller screens */
     }
 }
-
 
 /* Contact Me Section */
 .form {
