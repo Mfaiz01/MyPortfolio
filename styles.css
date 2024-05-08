@@ -364,7 +364,6 @@ textarea {
 #footer {
     background-color: #4db5ff;
     padding: 2rem;
-    padding-bottom: 4rem;
     text-align: center; /* Center align content */
 }
 
@@ -376,7 +375,10 @@ ul {
 
 ul li {
     display: inline-block; /* Display list items horizontally */
-    padding: 0 0.5rem; /* Add padding between list items */
+}
+
+ul li:not(:last-child) {
+    margin-right: 1rem; /* Add margin between list items */
 }
 
 ul li a {
@@ -425,8 +427,11 @@ ul li a:hover {
 @media (max-width: 768px) {
     ul li {
         display: block; /* Display list items vertically */
-        margin: 1rem 0; /* Add margin between list items */
-        padding: 0; /* Reset padding for vertical layout */
+        margin: 0.5rem 0; /* Add margin between list items */
+    }
+
+    ul li:not(:last-child) {
+        margin-right: 0; /* Reset margin for list items */
     }
 
     .font-awesome li {
