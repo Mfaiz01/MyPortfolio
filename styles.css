@@ -376,7 +376,7 @@ ul {
 
 ul li {
     display: inline-block; /* Display list items horizontally */
-    margin: 0 1rem; /* Add margin between list items */
+    padding: 0 0.5rem; /* Add padding between list items */
 }
 
 ul li a {
@@ -426,10 +426,11 @@ ul li a:hover {
     ul li {
         display: block; /* Display list items vertically */
         margin: 1rem 0; /* Add margin between list items */
+        padding: 0; /* Reset padding for vertical layout */
     }
 
     .font-awesome li {
-        margin: 0 0.5rem; /* Adjust margin for social icons */
+        margin: 0.5rem; /* Adjust margin for social icons */
     }
 
     #footer p {
