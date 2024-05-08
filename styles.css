@@ -360,7 +360,6 @@ textarea {
     resize: none;
 }
 
-
 /* Footer Section */
 #footer {
     background-color: #4db5ff;
@@ -377,7 +376,7 @@ ul {
 
 ul li {
     display: inline-block; /* Display list items horizontally */
-    margin: 0 1rem;
+    margin: 0 1rem; /* Add margin between list items */
 }
 
 ul li a {
