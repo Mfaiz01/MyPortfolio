@@ -364,6 +364,7 @@ textarea {
 #footer {
     background-color: #4db5ff;
     padding: 2rem;
+    padding-bottom: 4rem;
     text-align: center; /* Center align content */
 }
 
@@ -374,7 +375,12 @@ ul {
 }
 
 ul li {
-    margin-bottom: 0.5rem; /* Add margin between list items */
+    display: inline-block; /* Display list items horizontally */
+    margin-right: 1rem; /* Add margin between list items */
+}
+
+ul li:last-child {
+    margin-right: 0; /* Remove margin from the last list item */
 }
 
 ul li a {
@@ -382,7 +388,6 @@ ul li a {
     font-size: 1.2rem;
     color: #1f1f38;
     transition: color 0.5s;
-    display: block; /* Display links vertically */
 }
 
 ul li a:hover {
@@ -395,6 +400,11 @@ ul li a:hover {
 
 .font-awesome li {
     display: inline-block; /* Display social icons horizontally */
+    margin-right: 1rem; /* Add margin between icons */
+}
+
+.font-awesome li:last-child {
+    margin-right: 0; /* Remove margin from the last icon */
 }
 
 .font-awesome li i {
@@ -422,25 +432,16 @@ ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    ul li {
-        display: block; /* Display list items vertically */
-        margin: 0.5rem 0; /* Add margin between list items */
+    ul,
+    .font-awesome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    ul li a {
-        font-size: 1rem; /* Adjust font size for smaller screens */
-    }
-
-    ul li:not(:last-child) {
-        margin-right: 0; /* Reset margin for list items */
-    }
-
+    ul li,
     .font-awesome li {
-        margin: 0.5rem; /* Adjust margin for social icons */
-    }
-
-    #footer p {
-        margin-top: 2rem; /* Increase margin-top for spacing */
+        margin: 0.5rem 0; /* Add margin between items */
     }
 }
 
