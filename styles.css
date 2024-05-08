@@ -444,8 +444,6 @@ ul li a:hover {
         margin: 0.5rem 0; /* Add margin between items */
     }
 }
-
-
 /* Scroll Top */
 #scroll-top {
     background-color: #4db5ff;
@@ -455,7 +453,7 @@ ul li a:hover {
     width: 35px;
     height: 35px;
     position: fixed;
-    bottom: 1rem;
+    bottom: 5rem; /* Adjust the bottom position */
     right: 4%;
     font-size: 1rem;
     display: flex;
@@ -464,6 +462,7 @@ ul li a:hover {
     cursor: pointer;
     z-index: 2000;
 }
+
 /* CSS for the bottom navigator */
 /* CSS for the bottom navigator */
 .bottom-bar {
