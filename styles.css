@@ -464,32 +464,51 @@ ul li a:hover {
     cursor: pointer;
     z-index: 2000;
 }
-/* Bottom Navigator */
+
+/* CSS for the bottom navigator */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+    z-index: 1000;
+}
+
+.bottom-bar .icon {
+    font-size: 1.5rem; /* Adjust icon size */
+    color: #000; /* Set icon color to dark black */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%; /* Add round curve background */
+    padding: 0.5rem; /* Adjust padding */
+}
+
+.bottom-bar .icon.active,
+.bottom-bar .icon:hover {
+    background-color: #4db5ff; /* Set background color when active or hovered */
+    color: #fff; /* Set text color to white */
+}
+
+/* Adjust color for certification icon */
+.bottom-bar .certification-icon {
+    color: #ffcc00; /* Set certification icon color to yellow */
+}
+
 @media only screen and (max-width: 768px) {
     .bottom-bar {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: transparent; /* Set background color to transparent */
-        display: flex;
-        justify-content: space-around; /* Center items horizontally with space around */
-        align-items: center; /* Center items vertically */
-        padding: 1rem 0; /* Add padding */
-        z-index: 1000;
+        padding: 0.5rem 0;
     }
 
     .bottom-bar .icon {
-        font-size: 2rem; /* Adjust icon size */
-        color: #fff; /* Set icon color */
-        cursor: pointer; /* Add cursor pointer */
-        transition: all 0.3s ease; /* Add transition effect */
-    }
-
-    .bottom-bar .icon.active {
-        color: #4db5ff; /* Set active icon color */
+        font-size: 1.2rem; /* Adjust icon size for smaller screens */
     }
 }
+
 
 /* Utility Classes */
 .poppins {
