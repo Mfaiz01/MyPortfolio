@@ -598,7 +598,6 @@ ul li a:hover {
 }
 
 /* Education Section Styles */
-
 #education {
     background-color: #151527;
     padding: 60px 0;
@@ -606,30 +605,17 @@ ul li a:hover {
 
 .milestones-container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
 }
 
 .milestone-item {
-    width: 100%;
+    width: calc(50% - 20px); /* Adjust width for responsiveness */
     background-color: #1f1f38;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin: 10px;
     padding: 20px;
-    display: flex;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.5s ease-out forwards; /* Animation for fade-in effect */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .milestone-content {
@@ -679,9 +665,10 @@ ul li a:hover {
 
 @media (max-width: 768px) {
     .milestone-item {
-        width: 100%;
+        width: calc(100% - 20px); /* Adjust width for smaller screens */
     }
 }
+
 
 /* Contact Me Section */
 .form {
