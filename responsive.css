@@ -147,20 +147,6 @@
 }
 
 
-/* CSS for Education Section */
-.milestones-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.milestone-container {
-    margin-bottom: 20px;
-}
-
-.milestone-item {
-    /* Styles for milestone items */
-}
 
 /* CSS for Footer Section */
 .footer-container {
@@ -171,8 +157,6 @@
 
 .footer-list {
     margin-bottom: 10px;
-    display: flex; /* Change display property to flex */
-    align-items: center; /* Align items horizontally */
 }
 
 .footer-list li {
@@ -185,11 +169,11 @@
     }
 
     .footer-list {
-        flex-direction: row; /* Change flex direction to row */
+        flex-direction: column;
     }
 
     .footer-list li {
-        margin-right: 10px;
-        margin-bottom: 0; /* Remove bottom margin */
+        margin-right: 0;
+        margin-bottom: 10px;
     }
 }
