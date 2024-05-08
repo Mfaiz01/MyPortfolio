@@ -362,15 +362,20 @@ textarea {
 
 
 
-/* Footer Section  */
+/* Footer Section */
 #footer {
     background-color: #4db5ff;
     padding: 2rem;
     padding-bottom: 4rem;
+    text-align: center; /* Center align content */
+}
+
+ul {
+    padding: 0;
 }
 
 ul li {
-    list-style: none;
+    display: inline-block; /* Display list items horizontally */
     margin: 0 1rem;
 }
 
@@ -378,13 +383,12 @@ ul li a {
     text-decoration: none;
     font-size: 1.2rem;
     color: #1f1f38;
-    transition: all .5s;
+    transition: color 0.5s;
 }
 
 ul li a:hover {
     color: #fff;
 }
-
 
 .font-awesome {
     margin: 1.1rem auto;
@@ -397,19 +401,42 @@ ul li a:hover {
     color: #fff;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
 .font-awesome li i:hover {
     border: 1px solid #1f1f38;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background: transparent;
     color: #1f1f38;
 }
 
 #footer p {
     color: #1f1f38;
-    font-size: .9srem;
+    font-size: 0.9rem;
+    margin-top: 1rem; /* Add some space at the top */
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    ul {
+        display: block; /* Change list items to display vertically */
+        text-align: center; /* Center align list items */
+    }
+
+    ul li {
+        display: block; /* Display list items vertically */
+        margin: 1rem 0; /* Add margin between list items */
+    }
+
+    .font-awesome {
+        margin: 1rem auto; /* Adjust margin for center alignment */
+    }
+
+    #footer p {
+        margin-top: 2rem; /* Increase margin-top for spacing */
+    }
 }
 
 

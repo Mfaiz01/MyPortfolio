@@ -148,32 +148,3 @@
 
 
 
-/* CSS for Footer Section */
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-list {
-    margin-bottom: 10px;
-}
-
-.footer-list li {
-    margin-right: 10px;
-}
-
-@media screen and (max-width: 768px) {
-    .milestone-item {
-        /* Adjust styles for smaller screens */
-    }
-
-    .footer-list {
-        flex-direction: column;
-    }
-
-    .footer-list li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-}
