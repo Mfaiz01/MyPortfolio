@@ -610,6 +610,7 @@ ul li a:hover {
 }
 
 .milestone-item {
+    max-width: 400px; /* Set a maximum width for stability */
     width: calc(50% - 20px); /* Adjust width for responsiveness */
     background-color: #1f1f38;
     border-radius: 10px;
@@ -673,8 +674,10 @@ ul li a:hover {
 @media (max-width: 768px) {
     .milestone-item {
         width: calc(100% - 20px); /* Adjust width for smaller screens */
+        max-width: none; /* Reset max-width for smaller screens */
     }
 }
+
 
 
 /* Contact Me Section */
