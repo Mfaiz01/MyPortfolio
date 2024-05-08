@@ -606,6 +606,7 @@ ul li a:hover {
 .milestones-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* Center align items */
 }
 
 .milestone-item {
@@ -662,6 +663,12 @@ ul li a:hover {
 }
 
 /* Responsive Design */
+
+@media (max-width: 1024px) {
+    .milestone-item {
+        width: calc(50% - 20px); /* Adjust width for tablets */
+    }
+}
 
 @media (max-width: 768px) {
     .milestone-item {
