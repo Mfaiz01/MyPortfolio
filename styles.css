@@ -464,19 +464,10 @@ ul li a:hover {
     cursor: pointer;
     z-index: 2000;
 }
-
+/* CSS for the bottom navigator */
 /* CSS for the bottom navigator */
 .bottom-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: transparent;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 1rem 0;
-    z-index: 1000;
+    display: none; /* Hide bottom navigator by default */
 }
 
 .bottom-bar .icon {
@@ -500,6 +491,19 @@ ul li a:hover {
 }
 
 @media only screen and (max-width: 768px) {
+    .bottom-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+
     .bottom-bar {
         padding: 0.5rem 0;
     }
