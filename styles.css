@@ -374,12 +374,7 @@ ul {
 }
 
 ul li {
-    display: inline-block; /* Display list items horizontally */
-    margin-right: 1rem; /* Add margin between list items */
-}
-
-ul li:last-child {
-    margin-right: 0; /* Remove margin for the last list item */
+    margin-bottom: 0.5rem; /* Add margin between list items */
 }
 
 ul li a {
@@ -387,6 +382,7 @@ ul li a {
     font-size: 1.2rem;
     color: #1f1f38;
     transition: color 0.5s;
+    display: block; /* Display links vertically */
 }
 
 ul li a:hover {
