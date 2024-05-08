@@ -361,7 +361,6 @@ textarea {
 }
 
 
-
 /* Footer Section */
 #footer {
     background-color: #4db5ff;
@@ -372,6 +371,8 @@ textarea {
 
 ul {
     padding: 0;
+    margin: 0;
+    list-style: none; /* Remove default list styles */
 }
 
 ul li {
@@ -392,6 +393,10 @@ ul li a:hover {
 
 .font-awesome {
     margin: 1.1rem auto;
+}
+
+.font-awesome li {
+    display: inline-block; /* Display social icons horizontally */
 }
 
 .font-awesome li i {
@@ -418,20 +423,14 @@ ul li a:hover {
 }
 
 /* Responsive Design */
-
 @media (max-width: 768px) {
-    ul {
-        display: block; /* Change list items to display vertically */
-        text-align: center; /* Center align list items */
-    }
-
     ul li {
         display: block; /* Display list items vertically */
         margin: 1rem 0; /* Add margin between list items */
     }
 
-    .font-awesome {
-        margin: 1rem auto; /* Adjust margin for center alignment */
+    .font-awesome li {
+        margin: 0 0.5rem; /* Adjust margin for social icons */
     }
 
     #footer p {
