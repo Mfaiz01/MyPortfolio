@@ -171,6 +171,8 @@
 
 .footer-list {
     margin-bottom: 10px;
+    display: flex; /* Change display property to flex */
+    align-items: center; /* Align items horizontally */
 }
 
 .footer-list li {
@@ -183,11 +185,11 @@
     }
 
     .footer-list {
-        flex-direction: column;
+        flex-direction: row; /* Change flex direction to row */
     }
 
     .footer-list li {
-        margin-right: 0;
-        margin-bottom: 10px;
+        margin-right: 10px;
+        margin-bottom: 0; /* Remove bottom margin */
     }
 }
