@@ -465,64 +465,31 @@ ul li a:hover {
     z-index: 2000;
 }
 /* Bottom Navigator */
-
-#bottom {
-    position: fixed;
-    width: 6rem; /* Adjust the width to fit the content */
-    height: 100vh; /* Cover the full viewport height */
-    display: flex;
-    justify-content: center; /* Center items horizontally */
-    align-items: center;
-    z-index: 1000;
-    bottom: 0;
-}
-
-#bottom .bottom-nav {
-    display: flex;
-    flex-direction: column; /* Display items vertically */
-    align-items: center; /* Center items horizontally */
-}
-
-#bottom .bottom-nav li {
-    color: #fff;
-    width: 8rem; /* Increase the width of each button */
-    height: 3rem; /* Increase the height of each button */
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 0.5rem; /* Add border-radius */
-    transition: all .4s ease-in-out;
-    text-align: center; /* Center the text */
-    margin-bottom: 1rem; /* Add margin between items */
-    background-color: transparent; /* Set background color to transparent */
-    transform-origin: bottom center; /* Rotate around the bottom center */
-    transform: rotate(90deg); /* Rotate the items 90 degrees */
-}
-
-#bottom .bottom-nav li:hover {
-    background-color: #4db5ff;
-}
-
-#bottom .bottom-nav li:active {
-    background-color: #4db5ff;
-}
-
-.cpy-white {
-    color: white;
-}
-
 @media only screen and (max-width: 768px) {
-    #bottom {
-        width: auto; /* Allow width to adjust based on content */
-        height: auto; /* Allow height to adjust based on content */
+    .bottom-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent; /* Set background color to transparent */
+        display: flex;
+        justify-content: space-around; /* Center items horizontally with space around */
+        align-items: center; /* Center items vertically */
+        padding: 1rem 0; /* Add padding */
+        z-index: 1000;
     }
-    #bottom .bottom-nav li {
-        margin-bottom: 0.5rem; /* Adjust margin */
-        width: 10rem; /* Adjust width */
-        height: 4rem; /* Adjust height */
+
+    .bottom-bar .icon {
+        font-size: 2rem; /* Adjust icon size */
+        color: #fff; /* Set icon color */
+        cursor: pointer; /* Add cursor pointer */
+        transition: all 0.3s ease; /* Add transition effect */
+    }
+
+    .bottom-bar .icon.active {
+        color: #4db5ff; /* Set active icon color */
     }
 }
-
-
 
 /* Utility Classes */
 .poppins {
