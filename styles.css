@@ -359,7 +359,6 @@ textarea {
     color: white;
     resize: none;
 }
-
 /* Footer Section */
 #footer {
     background-color: #4db5ff;
@@ -432,18 +431,28 @@ ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    #footer {
+        padding-bottom: 2rem; /* Adjust padding for smaller screens */
+    }
+
     ul,
     .font-awesome {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        justify-content: center; /* Center items horizontally */
     }
 
     ul li,
     .font-awesome li {
-        margin: 0.5rem 0; /* Add margin between items */
+        margin: 0.5rem; /* Add margin between items */
+    }
+
+    ul li,
+    .font-awesome li {
+        margin: 0.5rem 1rem; /* Adjust margin for better spacing */
     }
 }
+
 /* Scroll Top */
 #scroll-top {
     background-color: #4db5ff;
