@@ -1,432 +1,620 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Mohammed Faiz - Frontend Web Developer </title>
-    <link rel="icon" type="image/x-icon" href="./Images/favicon.png">
-    <link rel="stylesheet" href="styles.css">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" ></script>
-
-    <link rel="stylesheet" media="screen and (max-width: 821px)" href="responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-</head>
-<style>
-      /* CSS for the typing animation */
-      .typing-animation::after {
-            content: "|"; /* Cursor */
-            animation: blink-caret 1s infinite;
-        }
-
-        /* Keyframe animation for the cursor blinking */
-        @keyframes blink-caret {
-            50% {
-                opacity: 0;
-            }
-        }
-</style>
-<script>
-    function scrolltop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohammed Faiz</title>
+    <link rel="icon" type="image/x-icon" href="./Images/f4.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 821px)"
+      href="responsive.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <style>
+    /* CSS for the typing animation */
+    .typing-animation::after {
+      content: "|"; /* Cursor */
+      animation: blink-caret 1s infinite;
     }
 
-    let contact = document.getElementById('contactForm');
-    contact.addEventListener('submit', function (e) {
-        e.preventDefault();
-        alert(`Sorry Request cannot be accepted due to some technical errors`);
-    });
-</script>
-<body>
+    /* Keyframe animation for the cursor blinking */
+    @keyframes blink-caret {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+  <script>
+    function scrolltop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
 
+    let contact = document.getElementById("contactForm");
+    contact.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert(`Sorry Request cannot be accepted due to some technical errors`);
+    });
+  </script>
+  <body>
     <!-- Navbar Section -->
-    <nav id="navbar" class="flex s-around bg-color">
-        <div class="left-nav">
-            <h2 class="t-white">My Portfolio</h2>
+    <nav class="navbar">
+      <div class="content">
+        <div class="logo"><a href="#" style="color: #007bff;">Portfolio</a></div>
+
+        <ul class="menu-list">
+          <li><a href="#home" class="t-white roboto">Home</a></li>
+          <li><a href="#about" class="t-white roboto">About</a></li>
+          <li><a href="#skills" class="t-white roboto">Skills</a></li>
+          <li><a href="#education" class="t-white roboto">Education</a></li>
+          <li><a href="#projects" class="t-white roboto">Projects</a></li>
+          <li><a href="#contact" class="t-white roboto">Contact</a></li>
+          <li>
+            <a href="#certifications" class="t-white roboto">Certifications</a>
+          </li>
+        </ul>
+        <div class="icon menu-btn">
+          <i class="fas fa-bars"></i>
         </div>
-        <div class="right-nav">
-            <ul class="flex">
-                <li><a href="#home" class="t-white roboto">Home</a></li>
-                <li><a href="#about" class="t-white roboto">About</a></li>
-                <li><a href="#skills" class="t-white roboto">Skills</a></li>
-                <li><a href="#education" class="t-white roboto">Education</a></li>
-                <li><a href="#projects" class="t-white roboto">Projects</a></li>
-                <li><a href="#contact" class="t-white roboto">Contact</a></li>
-                <li><a href="#certifications" class="t-white roboto">certifications</a></li>
-                
-            </ul>
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
         </div>
+      </div>
     </nav>
 
-    <div class="bottom-bar">
-        <a href="#home"><ion-icon name="home-outline" class="icon active" onclick="change(this)"></ion-icon></a>
-        <a href="#about"><ion-icon name="person-outline" class="icon active" onclick="change(this)"></ion-icon></a>
-        <a href="#skills"><ion-icon name="add-circle-outline" class="icon active" onclick="change(this)"></ion-icon></a>
-        <a href="#education"><ion-icon name="school-outline" class="icon active" onclick="change(this)"></ion-icon></a>
-        <a href="#projects"><ion-icon name="folder-outline" class="icon active" onclick="change(this)"></ion-icon></a>
-        <a href="#contact"><ion-icon name="mail-outline" class="icon active" onclick="change(this)"></ion-icon></a>
-        <a href="#certifications"><ion-icon name="medal-outline" class="icon active"onclick="change(this)"></ion-icon></a>
-    </div>
-    
-
-    <!-- Your JavaScript code goes here -->
-
     <script>
-        function change(item){
-            const buttons = document.querySelectorAll('ion-icon');
-            buttons.forEach(function(obj){
-                obj.classList.remove("active");
-            });
-            item.classList.add("active");
-        }
+      document.addEventListener("DOMContentLoaded", function () {
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menu = document.querySelector(".menu-list");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+
+        menuBtn.addEventListener("click", function (event) {
+          event.stopPropagation(); // Prevents click event from propagating to parent elements
+          menu.classList.add("active");
+          menuBtn.classList.add("hide");
+          cancelBtn.classList.add("show");
+          body.classList.add("disabledScroll");
+        });
+
+        cancelBtn.addEventListener("click", function (event) {
+          event.stopPropagation(); // Prevents click event from propagating to parent elements
+          menu.classList.remove("active");
+          menuBtn.classList.remove("hide");
+          cancelBtn.classList.remove("show");
+          body.classList.remove("disabledScroll");
+        });
+
+        // Close the menu when clicking outside of it
+        document.addEventListener("click", function (event) {
+          if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+            menu.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            cancelBtn.classList.remove("show");
+            body.classList.remove("disabledScroll");
+          }
+        });
+
+        window.addEventListener("scroll", function () {
+          navbar.classList.toggle("sticky", window.scrollY > 20);
+        });
+
+        // Enable navigation for small devices
+        const menuLinks = document.querySelectorAll(".menu-list li a");
+        menuLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            if (menu.classList.contains("active")) {
+              menu.classList.remove("active");
+              menuBtn.classList.remove("hide");
+              cancelBtn.classList.remove("show");
+              body.classList.remove("disabledScroll");
+            }
+          });
+        });
+      });
     </script>
-
     <!-- Home Section -->
-    <section id="home" class="flex s-around sw-80 m-auto">
-        <div class="home-left flex items-center">
-            <div class="home-content">
-                <h6 class="poppinss">Hi, I'm</h6>
-                <h1 class="t-white">Mohammed Faiz</h1>
-                <h4 class="poppinss">
-                    <span class="typing-animation"></span>
-                </h4>
-                <a href="resume.pdf" download="Mohammed_Faiz_Resume.pdf" target="_blank">
-                    <button class="btn poppins">Resume</button>
-                </a>
-                
-                <a class="btn live poppins" id="hireme" href="https://www.linkedin.com/in/mohammed-faiz-pes/">Let's Talk</a>
-            </div>
+    <section id="home" class="home-container">
+      <div class="home-left">
+        <div class="home-content">
+          <h6 class="poppins">Hi, I'm</h6>
+          <h1 class="t-white">Mohammed Faiz</h1>
+          <h4 class="poppins">
+            <span class="typing-animation"></span>
+          </h4>
+          <a
+            href="resume.pdf"
+            download="Mohammed_Faiz_Resume.pdf"
+            target="_blank"
+          >
+            <button class="btn poppins">Resume</button>
+          </a>
+          <a
+            class="btn live poppins"
+            id="hireme"
+            href="https://www.linkedin.com/in/mohammed-faiz-pes/"
+            >Let's Talk</a
+          >
         </div>
-        <div class="home-right flex s-center items-center">
-            <div class="circle flex s-center items-center" id="mainImage">
-                <!-- Here in src replace the given link with your image link -->
-                <img src="images\f4.png" alt="">
-            </div>
+      </div>
+      <div class="home-right">
+        <div class="circle" id="mainImage">
+          <!-- Removed the img tag and used background-image instead -->
         </div>
+      </div>
     </section>
-    <script>
- // JavaScript to simulate typing effect
- const texts = ["Frontend Web Developer.", "Tech Curious.","Aspiring Full Stack Developer.","Frontend Web Developer."];
-    let textIndex = 0;
-    let index = 0;
-    let loopCount = 0;
-    const maxLoops = texts.length;
 
-    function type() {
+    <script>
+      // JavaScript to simulate typing effect
+      const texts = [
+        "Frontend Web Developer.",
+        "Tech Curious.",
+        "Aspiring Full Stack Developer.",
+        "Frontend Web Developer.",
+      ];
+      let textIndex = 0;
+      let index = 0;
+      let loopCount = 0;
+      const maxLoops = texts.length;
+
+      function type() {
         const currentText = texts[textIndex];
-        document.querySelector('.typing-animation').textContent = currentText.slice(0, index);
+        document.querySelector(".typing-animation").textContent =
+          currentText.slice(0, index);
         index++;
         if (index <= currentText.length) {
-            setTimeout(type, 200); // Continue typing animation
+          setTimeout(type, 200); // Continue typing animation
         } else {
-            if (loopCount < maxLoops - 1) {
-                loopCount++;
-                setTimeout(() => {
-                    textIndex = (textIndex + 1) % texts.length; // Move to the next text
-                    index = 0; // Reset index for the new text
-                    setTimeout(type, 500); // Start typing animation for the new text
-                }, 1000); // Wait for 1 second before moving to the next text
-            } else {
-                // Stop animation after all texts have been displayed once
-                return;
-            }
+          if (loopCount < maxLoops - 1) {
+            loopCount++;
+            setTimeout(() => {
+              textIndex = (textIndex + 1) % texts.length; // Move to the next text
+              index = 0; // Reset index for the new text
+              setTimeout(type, 500); // Start typing animation for the new text
+            }, 1000); // Wait for 1 second before moving to the next text
+          } else {
+            // Stop animation after all texts have been displayed once
+            return;
+          }
         }
-    }
+      }
 
-    type(); // Start typing animation
+      type(); // Start typing animation
     </script>
 
-    <!-- About Section -->
-    <section id="about">
-        <h1 class="t-center my-2 t-white f-2"><br /><br />About Me</h1>
-        <div class="about-container flex s-around ">
-            <div class=" about-left flex s-center items-center">
-                <!-- Here in src replade the given link with your secondary image link -->
-                <img src="./Images/secondary.jpg" alt="" style="width: 50%;">
-            </div>
+ <!-- About Section -->
+<section id="about">
+  <div class="about-container">
+    <div class="about-content">
+      <h1 class="heading t-center">About Me</h1>
+      <p class="description">
+        Seeking to apply my expertise in front-end web development and
+        technical prowess as a Full Stack Developer. Dedicated to
+        spearheading transformative projects, from concept to execution,
+        and delivering top-tier solutions that drive measurable outcomes.
+        Committed to mastering diverse technologies, including both
+        frontend and backend stacks, to excel as a multifaceted engineer.
+        Eager to contribute my skills and drive success in future
+        endeavours, leveraging a holistic understanding of software
+        development to tackle complex challenges head-on.
+      </p>
+      <a
+        class="btn live poppins"
+        id="hireme"
+        href="https://in.linkedin.com/in/mohammed-faiz-839107290"
+        >Hire Me</a
+      >
+    </div>
+  </div>
+</section>
 
-            <div class="about-right flex">
-                <div class="about-content">
-                  
-                    <h1 class="t-white m-b-1 poppins">Mohammed Faiz</h1>
-                    <p class="t-white poppins">Seeking to apply my expertise in front-end web development and technical prowess as a Full Stack Developer. Dedicated to spearheading transformative projects, from concept to execution, and delivering top-tier solutions that drive measurable outcomes.  <br>
-                        Committed to mastering diverse technologies, including both frontend and backend stacks, to excel as a multifaceted engineer. Eager to contribute my skills and drive success in future endeavours, leveraging a holistic understanding of software development to tackle complex challenges head-on.</p>
-                    <a class="btn live poppins" id="hireme"
-                        href="https://in.linkedin.com/in/mohammed-faiz-839107290">Hire Me</a>
-                </div>
-            </div>
-        </div>
-    </section>
+
+
+    <style>
+   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+
+body {
+  background-color: #000; /* Set background to black */
+  color: white; /* Ensure all text is white */
+  font-family: Arial, sans-serif;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 100%; /* Expand to full width */
+}
+
+.about-content {
+  background-color: #000; /* Match the background color */
+  border: 2px solid #ffffff; /* Outline color matching the screenshot */
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Optional: Add some shadow */
+  padding: 2rem;
+  text-align: center;
+  width: 80%; /* Expand width as needed */
+}
+
+.heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800; /* Extra bold */
+  font-size: 3.5rem; /* Increase font size */
+  color: #ffffff; /* White color */
+  margin-bottom: 1.5rem; /* Add some space below */
+}
+
+.description {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400; /* Normal */
+  font-size: 1.2rem; /* Increase font size */
+  color: #ffffff; /* White color */
+  line-height: 1.8; /* Increase line height for readability */
+  text-align: justify;
+}
+
+.btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff; /* Button color matching theme */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .about-content {
+    padding: 1rem;
+  }
+
+  .heading {
+    font-size: 3rem; /* Adjust font size for smaller screens */
+  }
+
+  .description {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+}
+
+
+    </style>
 
     <!-- Skills Section -->
     <section id="skills">
-        <h1 class="t-center my-2 t-white f-2"><br /><br />Skills</h1>
-        <div class="services-container flex s-around h-50"">
-        <div class=" skills-left flex s-center items-center">
-            <img src="/Images/skills.png" alt="">
+      <h1 class="t-center my-2 t-white f-2"><br /><br />Skills</h1>
+      <div class="services-container flex s-around h-50">
+        <div class="skills-left flex s-center items-center">
+          <img src="/Images/skills.png" alt="" />
         </div>
-
         <div class="skills-right flex items-center">
-            <div class="skillss-container">
-                <div class="html bar p-relative"><span class="bar-content left t-white">HTML</span><span
-                        class="bar-content right-skills t-white">90%</span></div>
-                <div class="css bar p-relative"><span class="bar-content left t-white">CSS</span><span
-                        class="bar-content right-skills t-white">80%</span></div>
-                <div class="js bar p-relative"><span class="bar-content left t-white">JavaScript</span><span
-                        class="bar-content right-skills t-white">75%</span></div>
-                <div class="bootstrap bar p-relative"><span class="bar-content left t-white">Bootstrap</span><span
-                        class="bar-content right-skills t-white">50%</span></div>
-                <div class="reactjs bar p-relative"><span class="bar-content left t-white">ReactJs</span><span
-                        class="bar-content right-skills t-white">30%</span></div>
+          <div class="skillss-container">
+            <div class="html bar p-relative">
+              <span class="bar-content left t-white">HTML</span
+              ><span class="bar-content right-skills t-white">90%</span>
             </div>
+            <div class="css bar p-relative">
+              <span class="bar-content left t-white">CSS</span
+              ><span class="bar-content right-skills t-white">80%</span>
+            </div>
+            <div class="js bar p-relative">
+              <span class="bar-content left t-white">JavaScript</span
+              ><span class="bar-content right-skills t-white">75%</span>
+            </div>
+            <div class="bootstrap bar p-relative">
+              <span class="bar-content left t-white">Bootstrap</span
+              ><span class="bar-content right-skills t-white">50%</span>
+            </div>
+            <div class="reactjs bar p-relative">
+              <span class="bar-content left t-white">ReactJs</span
+              ><span class="bar-content right-skills t-white">30%</span>
+            </div>
+          </div>
         </div>
-        </div>
+      </div>
     </section>
-
-  
-<!-- Education Section -->
-<section id="education">
-    <h1 class="t-center my-2 t-white f-2">Education</h1>
-    <div class="milestones-container">
-        <!-- Diploma Milestone -->
-        <div class="milestone-item">
-            <div class="milestone-content">
-                <h2 class="t-white poppins">Diploma in Computer Science and Engineering</h2>
-                <p class="t-white poppins">Completed in 2022</p>
-                <p class="t-white poppins">2019 - 2022</p>
-            </div>
-            <hr class="horizontal-line">
-            <div class="college-name">
-                <p class="t-white poppins">D.Banumaih's polytechnic</p>
-                <p class="t-white poppins">Mahatma Gandhi Rd, Udayagir, KHB, Udayagiri, Mysuru, Karnataka 570019</p>
-            </div>
-        </div>
-        <!-- Bachelor's Milestone -->
-        <div class="milestone-item">
-            <div class="milestone-content">
-                <h2 class="t-white poppins">Bachelor's Degree in Computer Science and Engineering</h2>
-                <p class="t-white poppins">Expected Graduation: July 2025</p>
-                <p class="t-white poppins">2023 - 2025 (Expected)</p>
-            </div>
-            <hr class="horizontal-line">
-            <div class="college-name">
-                <p class="t-white poppins">PES College of Engineering</p>
-                <p class="t-white poppins">K V Shankaragowda Rd, PES College Campus, Mandya, Karnataka 571401</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-
+    <section id="education">
+      <h1 class="t-center my-2 t-white f-2">Education</h1>
+      <div class="timeline">
+          <div class="timeline-item left">
+              <div class="timeline-content">
+                  <h2>2016-2019</h2>
+                  <p>Secondary Education</p>
+              </div>
+          </div>
+          <div class="timeline-item right">
+              <div class="timeline-content">
+                  <p>Farooqia boys's High School, Mysuru</p>
+              </div>
+          </div>
+          <div class="timeline-item left">
+              <div class="timeline-content">
+                  <h2>2019-2022</h2>
+                  <p>High School Diploma</p>
+              </div>
+          </div>
+          <div class="timeline-item right">
+              <div class="timeline-content">
+                  <p>D.Banumiah's Polytechnic, Mysuru</p>
+              </div>
+          </div>
+          <div class="timeline-item left">
+              <div class="timeline-content">
+                  <h2>2022-Till date</h2>
+                  <p>Bachelor of Engineering (Computer Science and Engineering)</p>
+              </div>
+          </div>
+          <div class="timeline-item right">
+              <div class="timeline-content">
+                  <p>PES College Of Engineering, Mandya</p>
+              </div>
+          </div>
+      </div>
+  </section>
     <!-- Projects Section -->
     <section id="projects">
-        <h1 class=" t-center my-2 t-white f-2"><br /><br />Projects</h1>
-        <div class="projects-container flex s-center">
-            <div class="projects-item flex f-col s-center items-center">
-                <div class="image-container">
-                    <img src="images\f5.png" alt="">
-                </div>
-                
-
-
-
-                <h1 class="t-white poppins">College Website</h1>
-                <p class="t-white poppins">Crafted using a blend of React.js for dynamic functionality, HTML5 for structure, Tailwind CSS for sleek styling, and JavaScript & Bootstrap for enhanced interactivity and responsive design.</p>
-
-                <div class="buttons flex s-around">
-                    <a href="https://github.com/Mfaiz01/Tech-Turtles" class="btn mx-1 m-top">GitHub</a>
-                    <a href="https://mfaiz01.github.io/Tech-Turtles/" class="btn m-top live">Live Link</a>
-                </div>
-            </div>
-           
-            <div class="projects-item flex f-col s-center items-center">
-                <div class="image-container">
-                    <img src="images\f5.png" alt="">
-                </div>
-                
-
-                <h1 class="t-white poppins">College Website</h1>
-                <p class="t-white poppins">Crafted using a blend of React.js for dynamic functionality, HTML5 for structure, Tailwind CSS for sleek styling, and JavaScript & Bootstrap for enhanced interactivity and responsive design.</p>
-
-                <div class="buttons flex s-around">
-                    <a href="https://github.com/Mfaiz01/Tech-Turtles" class="btn mx-1 m-top">GitHub</a>
-                    <a href="https://mfaiz01.github.io/Tech-Turtles/" class="btn m-top live">Live Link</a>
-                </div>
-            </div>
-            <div class="projects-item flex f-col s-center items-center">
-                <div class="image-container">
-                    <img src="images\f5.png" alt="">
-                </div>
-                
-
-                <h1 class="t-white poppins">College Website</h1>
-                <p class="t-white poppins">Crafted using a blend of React.js for dynamic functionality, HTML5 for structure, Tailwind CSS for sleek styling, and JavaScript & Bootstrap for enhanced interactivity and responsive design.</p>
-
-                <div class="buttons flex s-around">
-                    <a href="https://github.com/Mfaiz01/Tech-Turtles" class="btn mx-1 m-top">GitHub</a>
-                    <a href="https://mfaiz01.github.io/Tech-Turtles/" class="btn m-top live">Live Link</a>
-                </div>
-            </div>
-            <div class="projects-item flex f-col s-center items-center">
-                <div class="image-container">
-                    <img src="images\f5.png" alt="">
-                </div>
-                
-                <h1 class="t-white poppins">College Website</h1>
-                <p class="t-white poppins">Crafted using a blend of React.js for dynamic functionality, HTML5 for structure, Tailwind CSS for sleek styling, and JavaScript & Bootstrap for enhanced interactivity and responsive design.</p>
-
-                <div class="buttons flex s-around">
-                    <a href="https://github.com/Mfaiz01/Tech-Turtles" class="btn mx-1 m-top">GitHub</a>
-                    <a href="https://mfaiz01.github.io/Tech-Turtles/" class="btn m-top live">Live Link</a>
-                </div>
-                </div>
-            </div>
-
+      <h1 class="t-center my-2 t-white f-2"><br /><br />Projects</h1>
+      <div class="projects-container flex s-center">
+        <div class="projects-item flex f-col s-center items-center">
+          <div class="image-container">
+            <img src="images\f5.png" alt="" />
+          </div>
+          <h1 class="t-white poppins">College Website</h1>
+          <p class="t-white poppins">
+            Crafted using a blend of React.js for dynamic functionality, HTML5
+            for structure, Tailwind CSS for sleek styling, and JavaScript &
+            Bootstrap for enhanced interactivity and responsive design.
+          </p>
+          <div class="buttons flex s-around">
+            <a
+              href="https://github.com/Mfaiz01/Tech-Turtles"
+              class="btn mx-1 m-top"
+              >GitHub</a
+            >
+            <a
+              href="https://mfaiz01.github.io/Tech-Turtles/"
+              class="btn m-top live"
+              >Live Link</a
+            >
+          </div>
         </div>
+        <div class="projects-item flex f-col s-center items-center">
+          <div class="image-container">
+            <img src="images\f5.png" alt="" />
+          </div>
+          <h1 class="t-white poppins">College Website</h1>
+          <p class="t-white poppins">
+            Crafted using a blend of React.js for dynamic functionality, HTML5
+            for structure, Tailwind CSS for sleek styling, and JavaScript &
+            Bootstrap for enhanced interactivity and responsive design.
+          </p>
+          <div class="buttons flex s-around">
+            <a
+              href="https://github.com/Mfaiz01/Tech-Turtles"
+              class="btn mx-1 m-top"
+              >GitHub</a
+            >
+            <a
+              href="https://mfaiz01.github.io/Tech-Turtles/"
+              class="btn m-top live"
+              >Live Link</a
+            >
+          </div>
+        </div>
+        <div class="projects-item flex f-col s-center items-center">
+          <div class="image-container">
+            <img src="images\f5.png" alt="" />
+          </div>
+          <h1 class="t-white poppins">College Website</h1>
+          <p class="t-white poppins">
+            Crafted using a blend of React.js for dynamic functionality, HTML5
+            for structure, Tailwind CSS for sleek styling, and JavaScript &
+            Bootstrap for enhanced interactivity and responsive design.
+          </p>
+          <div class="buttons flex s-around">
+            <a
+              href="https://github.com/Mfaiz01/Tech-Turtles"
+              class="btn mx-1 m-top"
+              >GitHub</a
+            >
+            <a
+              href="https://mfaiz01.github.io/Tech-Turtles/"
+              class="btn m-top live"
+              >Live Link</a
+            >
+          </div>
+        </div>
+        <div class="projects-item flex f-col s-center items-center">
+          <div class="image-container">
+            <img src="images\f5.png" alt="" />
+          </div>
+          <h1 class="t-white poppins">College Website</h1>
+          <p class="t-white poppins">
+            Crafted using a blend of React.js for dynamic functionality, HTML5
+            for structure, Tailwind CSS for sleek styling, and JavaScript &
+            Bootstrap for enhanced interactivity and responsive design.
+          </p>
+          <div class="buttons flex s-around">
+            <a
+              href="https://github.com/Mfaiz01/Tech-Turtles"
+              class="btn mx-1 m-top"
+              >GitHub</a
+            >
+            <a
+              href="https://mfaiz01.github.io/Tech-Turtles/"
+              class="btn m-top live"
+              >Live Link</a
+            >
+          </div>
+        </div>
+      </div>
     </section>
+  
 
-<!-- Modal for displaying certificate details -->
-<div id="certificate-modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <img id="certificate-full-image" src="" alt="">
-        <div class="certification-details">
-            <h2 id="certificate-title" class="t-white poppins"></h2>
-            <p id="certificate-description" class="t-white poppins"></p>
-        </div>
-        <a id="download-link" class="download-link" href="#" download>Download Certificate</a>
-    </div>
-</div>
-
- <!-- Certification Section -->
- <section id="certifications">
-    <h1 class="t-center my-2 t-white f-2">Certifications</h1>
+    <!-- Certification Section -->
+  <section id="certifications">
+    <h1 class="t-white f-2">Certifications</h1>
     <div class="certifications-container">
-        <!-- Certification Item 1 -->
-        <div class="certification-item">
-            <img class="certification-image" src="images\c1.jpg" alt="Web Development Certificate">
-            <div class="certification-details">
-                <h2 class="t-white poppins">Web Development Certification</h2>
-                <p class="t-white poppins">Issued by XYZ Online Academy</p>
-                <p class="t-white poppins">Completion Date: January 2024</p>
-                <button class="download-button" onclick="downloadCertificate('images/c1.jpg')">Download Certificate</button>
-            </div>
+      <div class="certification-item">
+        <img class="certification-image" src="images/c1.jpg" alt="Ethical Hacking for Beginners">
+        <div class="certification-details">
+          <h2>Web technology</h2>
+          <p>Issued by Rareminds</p>
         </div>
-        <!-- Certification Item 2 -->
-        <div class="certification-item">
-            <img class="certification-image" src="images/c2.jpg" alt="Graphic Design Certificate">
-            <div class="certification-details">
-                <h2 class="t-white poppins">Graphic Design Certification</h2>
-                <p class="t-white poppins">Issued by ABC Design Institute</p>
-                <p class="t-white poppins">Completion Date: February 2024</p>
-                <button class="download-button" onclick="downloadCertificate('images/c2.jpg')">Download Certificate</button>
-            </div>
+      </div>
+      <div class="certification-item">
+        <img class="certification-image" src="images/c2.jpg" alt="SQL Essential Training">
+        <div class="certification-details">
+          <h2>Android Developer Virtual Internship</h2>
+          <p>Issued by AICTE - EduSkills</p>
         </div>
-        <!-- Add more certification items as needed -->
+      </div>
+      <div class="certification-item">
+        <img class="certification-image" src="images/c3.jpg" alt="Lanqill - English Language - Level 1">
+        <div class="certification-details">
+          <h2>Lanqill - English Language - Level 1</h2>
+          <p>Issued by Lanqill</p>
+        </div>
+      </div>
+      <div class="certification-item">
+        <img class="certification-image" src="images/c4.jpg" alt="Lanqill - English Language - Level 2">
+        <div class="certification-details">
+          <h2>Lanqill - English Language - Level 2</h2>
+          <p>Issued by Lanqill</p>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
+ 
 
-<script>
-    // Function to handle certificate download
-    function downloadCertificate(imageSrc) {
-        // Create an anchor element
-        var link = document.createElement('a');
-        link.href = imageSrc;
-        link.download = 'certificate.jpg'; // Set the default download filename
-        document.body.appendChild(link);
-        link.click(); // Trigger the click event to initiate download
-        document.body.removeChild(link); // Clean up the anchor element
-    }
-</script>
-
-
-
-
-   <!-- Contact Me Section -->
-<section id="contact" class="m-b-1">
+    <!-- Contact Me Section -->
+  <section id="contact" class="m-b-1">
     <h1 class="t-center my-2 t-white f-2">Contact Me</h1>
-    <div class="contact-container flex s-around items-center">
-        <div class="form" id="contactForm">
-            <form action="" id="contactFrom">
-                <div class="name form-div">
-                    <input type="text" name="name" id="name" class="poppins" placeholder="Enter Your Name">
-                </div>
-                <div class="email form-div">
-                    <input type="email" name="email" id="email" class="poppins" placeholder="Enter Your Email" required>
-                </div>
-                <div class="phone form-div">
-                    <input type="phone" name="phone" id="phone" class="poppins" placeholder="Enter Your Phone" required>
-                </div>
-                <div class="textarea form-div">
-                    <textarea name="text" id="textarea" cols="30" rows="10" class="poppins" placeholder="Enter Messages"></textarea>
-                </div>
-                <div class="submit-btn"> <!-- Wrap the button in a div -->
-                    <button type="submit" class="btn poppins" id="submit">Send</button>
-                </div>
-            </form>
-        </div>
+    <div class="contact-container">
+      <div class="form" id="contactForm">
+        <form action="" id="contactForm">
+          <div class="form-row">
+            <div class="form-div">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="poppins"
+                placeholder="Your Name"
+              />
+            </div>
+            <div class="form-div">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="poppins"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-div">
+            <textarea
+              name="text"
+              id="textarea"
+              cols="30"
+              rows="10"
+              class="poppins"
+              placeholder="Your Message"
+            ></textarea>
+          </div>
+          <div class="submit-btn">
+            <button type="submit" class="btn poppins" id="submit">
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-</section>
+  </section>
 
- <!-- Footer Section -->
-<footer id="footer">
-    <ul class="flex s-center w-80 m-auto my-2 res">
-        <li><a href="#home" class="poppinss">Home</a></li>
-        <li><a href="#about" class="poppinss">About</a></li>
-        <li><a href="#skills" class="poppinss">Skills</a></li>
-        <li><a href="#education" class="poppinss">Education</a></li>
-        <li><a href="#projects" class="poppinss">Projects</a></li>
-        <li><a href="#contact" class="poppinss">Contact</a></li>
-        <li><a href="#certifications" class="poppinss">Certifications</a></li>
+  <footer id="footer">
+    <ul class="nav-links">
+      <li><a href="#home" class="poppinss">Home</a></li>
+      <li><a href="#about" class="poppinss">About</a></li>
+      <li><a href="#skills" class="poppinss">Skills</a></li>
+      <li><a href="#education" class="poppinss">Education</a></li>
+      <li><a href="#projects" class="poppinss">Projects</a></li>
+      <li><a href="#contact" class="poppinss">Contact</a></li>
+      <li><a href="#certifications" class="poppinss">Certifications</a></li>
     </ul>
-    <ul class="flex s-center w-80 font-awesome">
-        <li><a href="https://www.linkedin.com/in/mohammed-faiz-pes/"><i class="fa-brands fa-linkedin-in"></i></a></li>
-        <li><a href="https://github.com/Mfaiz01"><i class="fa-brands fa-github"></i></a></li>
-        <li><a href="https://www.instagram.com/_mfaiz_01__"><i class="fa-brands fa-instagram"></i></a></li>
+    <ul class="social-links">
+      <li>
+        <a href="https://www.linkedin.com/in/mohammed-faiz-pes/">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/Mfaiz01">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/_mfaiz_01__">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
     </ul>
-    <p class="t-center my-2 poppins">&copy; All Rights Reserved - <span class="cpy-white poppins">Mohammed Faiz</span></p>
-</footer>
-
+    <p class="t-center my-2 poppins">
+      &copy; All Rights Reserved -
+      <span class="cpy-white poppins">Mohammed Faiz</span>
+    </p>
+  </footer>
 
     <script>
-        function scrolltop() {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        }
-    
-        let contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // Creating a notification element
-            let notification = document.createElement('div');
-            notification.classList.add('notification');
-            notification.textContent = `Sorry, request cannot be accepted due to some technical errors`;
-    
-            // Appending the notification to the body
-            document.body.appendChild(notification);
-    
-            // Remove the notification after a certain time (e.g., 5 seconds)
-            setTimeout(() => {
-                notification.remove();
-            }, 5000);
+      function scrolltop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
         });
+      }
+
+      let contactForm = document.getElementById("contactForm");
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        // Creating a notification element
+        let notification = document.createElement("div");
+        notification.classList.add("notification");
+        notification.textContent = `Sorry, request cannot be accepted due to some technical errors`;
+
+        // Appending the notification to the body
+        document.body.appendChild(notification);
+
+        // Remove the notification after a certain time (e.g., 5 seconds)
+        setTimeout(() => {
+          notification.remove();
+        }, 5000);
+      });
     </script>
-    
-    
 
     <div id="scroll-top" onclick="scrolltop()">
-        <span><i class="fa-solid fa-arrow-up"></i></span>
+      <span><i class="fa-solid fa-arrow-up"></i></span>
     </div>
-
-</body>
-<script src="/script.js"></script>
-
+  </body>
+  <script src="/script.js"></script>
 </html>
