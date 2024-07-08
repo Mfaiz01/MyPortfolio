@@ -76,7 +76,7 @@ body {
   transition: all 0.3s ease;
 }
 .menu-list li a:hover {
-  color: #007bff;
+  color:#008394;
 }
 .banner {
   height: 100vh;
@@ -165,7 +165,7 @@ body {
   padding: 0;
   background-color: #000; /* Set background to black */
   color: white; /* Ensure all text is white */
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .home-container {
@@ -205,8 +205,8 @@ body {
 .home-left .btn {
   margin-right: 0.5rem; /* Reduce margin between buttons */
   padding: 0.5rem 1rem;
-  background-color: #007bff;
-  color: white;
+  background-color:#008394;
+  color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -491,7 +491,7 @@ body {
 
 /* Footer Section */
 #footer {
-  background-color: #007bff;
+  background-color: #008394;
   padding: 2rem;
   padding-bottom: 4rem;
   text-align: center;
@@ -701,10 +701,10 @@ body {
 .btn {
   margin-left: 0 0.5rem;
   font-size: 1rem;
-  color: #4db5ff;
+  color:#00bcd4;
   cursor: pointer;
   padding: 0.75rem 1.2rem;
-  border: 1px solid #4db5ff;
+  border: 1px solid #00bcd4;
   border-radius: 0.4rem;
   background: transparent;
   font-family: "Poppins", sans-serif;
@@ -723,7 +723,7 @@ body {
 
 .live {
   color: #000000;
-  background-color: #4db5ff;
+  background-color:#008394;
 }
 body {
   font-family: 'Poppins', sans-serif;
@@ -733,9 +733,15 @@ body {
   padding: 0;
 }
 
+/* Education section */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
 #education {
-  background-color: #000;
+  background: linear-gradient(135deg, #0000 0%, #0000 100%);
   padding: 60px 0;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
 }
 
 .t-center {
@@ -746,17 +752,15 @@ body {
   margin: 2rem 0;
 }
 
-.t-white {
-  color: #fff;
-}
-
 .f-2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .timeline {
   position: relative;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -764,7 +768,7 @@ body {
   content: '';
   position: absolute;
   width: 6px;
-  background-color: #4db5ff;
+  background-color:#008394;
   top: 0;
   bottom: 0;
   left: 50%;
@@ -776,6 +780,7 @@ body {
   width: 50%;
   padding: 20px 40px;
   box-sizing: border-box;
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .timeline-item.left {
@@ -791,77 +796,125 @@ body {
 .timeline-item::after {
   content: '';
   position: absolute;
-  width: 25px;
-  height: 25px;
-  background-color: #fff;
-  border: 4px solid #4db5ff;
+  width: 20px;
+  height: 20px;
+  background-color: #008394;
   top: 15px;
   border-radius: 50%;
   z-index: 1;
 }
 
 .timeline-item.left::after {
-  right: -13px;
+  right: -10px;
 }
 
 .timeline-item.right::after {
-  left: -13px;
+  left: -10px;
 }
 
 .timeline-content {
   padding: 20px;
-  background-color: #1f1f38;
+  background-color: rgba(31, 31, 56, 0.9);
   position: relative;
-  border-radius: 6px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-content:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.timeline-content .icon {
+  color: #008394;
+  margin-bottom: 10px;
 }
 
 .timeline-content h2 {
   margin: 0;
-  margin-bottom: 10px;
   font-size: 1.5rem;
-  color: #4db5ff;
+  color: #008394;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .timeline-content p {
   margin: 0;
   color: #ddd;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .timeline {
+    padding: 0 20px;
+  }
+
   .timeline::after {
-      left: 20px;
+    left: 20px;
   }
 
   .timeline-item {
-      width: 100%;
-      padding-left: 50px;
-      padding-right: 0;
-      text-align: left;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 0;
+    text-align: left;
   }
 
   .timeline-item.left {
-      left: 0;
+    left: 0;
+    text-align: left;
   }
 
   .timeline-item.right {
-      left: 0;
+    left: 0;
   }
 
   .timeline-item::after {
-      left: 15px;
-      top: 20px;
-      right: auto;
+    left: -10px;
+    top: 25px;
+    right: auto;
   }
 
   .timeline-content {
-      text-align: left;
-      padding: 20px;
-      margin-top: 20px;
-      background-color: #1f1f38;
-      border-radius: 6px;
+    text-align: left;
+    padding: 20px;
+    margin-top: 20px;
+    transform: none !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   }
 }
+
+@media screen and (max-width: 480px) {
+  .f-2 {
+    font-size: 1.8rem;
+  }
+
+  .timeline-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .timeline-content p {
+    font-size: 1rem;
+  }
+
+  .timeline-content .icon {
+    font-size: 1.5rem;
+  }
+}
+
+
 /* Contact Me Section */
 .contact-container {
   display: flex;
@@ -873,7 +926,7 @@ body {
 .form {
   background-color: #000;
   padding: 20px;
-  border: 2px solid #4db5ff;
+  border: 2px solid#008394;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
   width: 100%;
@@ -895,7 +948,7 @@ body {
 .form-div textarea {
   width: 100%;
   padding: 10px;
-  border: 2px solid #4db5ff;
+  border: 2px solid #008394;
   border-radius: 5px;
 
   color: #fff;
@@ -912,7 +965,7 @@ body {
 
 .submit-btn .btn {
   padding: 10px 20px;
-  border: 2px solid #4db5ff;
+  border: 2px solid #008394;
   border-radius: 5px;
   background-color: #000;
   color: #fff;
@@ -921,7 +974,7 @@ body {
 }
 
 .submit-btn .btn:hover {
-  background-color: #4db5ff;
+  background-color: #008394;
   transform: scale(1.05);
 }
 
@@ -953,7 +1006,7 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: #f44336;
+  background-color: #008394;
   color: white;
   padding: 15px;
   border-radius: 5px;
@@ -1002,7 +1055,7 @@ body {
 }
 
 .certification-details h2 {
-  color: #4db5ff;
+  color:#00bcd4;
   margin: 10px 0;
   font-size: 18px;
 }
@@ -1014,7 +1067,7 @@ body {
 }
 
 .download-button {
-  background-color: #4db5ff;
+  background-color: #008394;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -1024,6 +1077,6 @@ body {
 }
 
 .download-button:hover {
-  background-color: #368ac0;
+  background-color:#008394;
 }
 
