@@ -61,9 +61,10 @@
           <li><a href="#skills" class="t-white roboto">Skills</a></li>
           <li><a href="#education" class="t-white roboto">Education</a></li>
           <li><a href="#projects" class="t-white roboto">Projects</a></li>
-          <li><a href="#contact" class="t-white roboto">Contact</a></li>
           <li>
             <a href="#certifications" class="t-white roboto">Certifications</a>
+          <li><a href="#contact" class="t-white roboto">Contact</a></li>
+        
           </li>
         </ul>
         <div class="icon menu-btn">
@@ -127,74 +128,68 @@
         });
       });
     </script>
-    <!-- Home Section -->
-    <section id="home" class="home-container">
-      <div class="home-left">
-        <div class="home-content">
-          <h6 class="poppins">Hi, I'm</h6>
-          <h1 class="t-white">Mohammed Faiz</h1>
-          <h4 class="poppins">
-            <span class="typing-animation"></span>
-          </h4>
-          <a
-            href="resume.pdf"
-            download="Mohammed_Faiz_Resume.pdf"
-            target="_blank"
-          >
-            <button class="btn poppins">Resume</button>
-          </a>
-          <a
-            class="btn live poppins"
-            id="hireme"
-            href="https://www.linkedin.com/in/mohammed-faiz-pes/"
-            >Let's Talk</a
-          >
-        </div>
-      </div>
-      <div class="home-right">
-        <div class="circle" id="mainImage">
-          <!-- Removed the img tag and used background-image instead -->
-        </div>
-      </div>
-    </section>
 
-    <script>
-      // JavaScript to simulate typing effect
-      const texts = [
-        "Frontend Web Developer.",
-        "Tech Curious.",
-        "Aspiring Full Stack Developer.",
-        "Frontend Web Developer.",
-      ];
-      let textIndex = 0;
-      let index = 0;
-      let loopCount = 0;
-      const maxLoops = texts.length;
+<!-- Home Section -->
+<section id="home" class="home-container">
+  <div class="home-left">
+    <div class="home-content">
+      <h6 class="poppins">Hi, I'm</h6>
+      <h1 class="t-white">Mohammed Faiz</h1>
+      <h4 class="poppins">
+        <span class="typing-animation"></span>
+      </h4>
+      <a href="resume.pdf" download="Mohammed_Faiz_Resume.pdf" target="_blank">
+        <button class="btn poppins">Resume</button>
+      </a>
+      <a class="btn live poppins" id="hireme" href="https://www.linkedin.com/in/mohammed-faiz-pes/">
+        Let's Talk
+      </a>
+    </div>
+  </div>
+  <div class="home-right">
+    <div class="circle" id="mainImage">
+      <!-- Removed the img tag and used background-image instead -->
+    </div>
+  </div>
+</section>
 
-      function type() {
-        const currentText = texts[textIndex];
-        document.querySelector(".typing-animation").textContent =
-          currentText.slice(0, index);
-        index++;
-        if (index <= currentText.length) {
-          setTimeout(type, 200); // Continue typing animation
-        } else {
-          if (loopCount < maxLoops - 1) {
-            loopCount++;
-            setTimeout(() => {
-              textIndex = (textIndex + 1) % texts.length; // Move to the next text
-              index = 0; // Reset index for the new text
-              setTimeout(type, 500); // Start typing animation for the new text
-            }, 1000); // Wait for 1 second before moving to the next text
-          } else {
-            // Stop animation after all texts have been displayed once
-            return;
-          }
-        }
+<script>
+  // JavaScript to simulate typing effect
+  const texts = [
+    "Frontend Web Developer.",
+    "Tech Curious.",
+    "Aspiring Full Stack Developer.",
+    "Frontend Web Developer.",
+  ];
+  let textIndex = 0;
+  let index = 0;
+  let loopCount = 0;
+  const maxLoops = texts.length;
+
+  function type() {
+    const currentText = texts[textIndex];
+    document.querySelector(".typing-animation").textContent =
+      currentText.slice(0, index);
+    index++;
+    if (index <= currentText.length) {
+      setTimeout(type, 200); // Continue typing animation
+    } else {
+      if (loopCount < maxLoops - 1) {
+        loopCount++;
+        setTimeout(() => {
+          textIndex = (textIndex + 1) % texts.length; // Move to the next text
+          index = 0; // Reset index for the new text
+          setTimeout(type, 500); // Start typing animation for the new text
+        }, 1000); // Wait for 1 second before moving to the next text
+      } else {
+        // Stop animation after all texts have been displayed once
+        return;
       }
+    }
+  }
 
-      type(); // Start typing animation
-    </script>
+  type(); // Start typing animation
+</script>
 
  <!-- About Section -->
 <section id="about">
@@ -295,43 +290,51 @@ body {
     font-size: 1rem; /* Adjust font size for smaller screens */
   }
 }
-
-
     </style>
 
-    <!-- Skills Section -->
-    <section id="skills">
-      <h1 class="t-center my-2 t-white f-2"><br /><br />Skills</h1>
-      <div class="services-container flex s-around h-50">
-        <div class="skills-left flex s-center items-center">
-          <img src="/Images/skills.png" alt="" />
-        </div>
-        <div class="skills-right flex items-center">
-          <div class="skillss-container">
-            <div class="html bar p-relative">
-              <span class="bar-content left t-white">HTML</span
-              ><span class="bar-content right-skills t-white">90%</span>
-            </div>
-            <div class="css bar p-relative">
-              <span class="bar-content left t-white">CSS</span
-              ><span class="bar-content right-skills t-white">80%</span>
-            </div>
-            <div class="js bar p-relative">
-              <span class="bar-content left t-white">JavaScript</span
-              ><span class="bar-content right-skills t-white">75%</span>
-            </div>
-            <div class="bootstrap bar p-relative">
-              <span class="bar-content left t-white">Bootstrap</span
-              ><span class="bar-content right-skills t-white">50%</span>
-            </div>
-            <div class="reactjs bar p-relative">
-              <span class="bar-content left t-white">ReactJs</span
-              ><span class="bar-content right-skills t-white">30%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- Skills Section -->
+<section id="skills">
+  <h1 class="t-center my-2 t-white f-2">Skills</h1>
+  <div class="skills-container flex s-center h-50">
+    <div class="skill-icon">
+      <img src="images/c.png" class="skill-logo" alt="C Logo" />
+    </div>
+    <div class="skill-icon">
+      <img src="images/html.webp" class="skill-logo" alt="HTML Logo" />
+    </div>
+    <div class="skill-icon">
+      <img src="images/css.png" class="skill-logo" alt="CSS Logo" />
+    </div>
+    <div class="skill-icon">
+      <img src="images/js.webp" class="skill-logo" alt="JavaScript Logo" />
+    </div>
+    <div class="skill-icon">
+      <img src="images/react.png" class="skill-logo" alt="React Logo" />
+    </div>
+    <div class="skill-icon">
+      <img src="images/java.png" class="skill-logo" alt="Java Logo" />
+    </div>
+    <div class="skill-icon">
+      <img src="images/python.png" class="skill-logo" alt="Python Logo" />
+    </div>
+    <div class="skill-icon">
+      <img src="images/django.png" class="skill-logo" alt="Django Logo" />
+    </div>
+    <div class="skill-icon">
+      <img src="images/figma.png" class="skill-logo" alt="Figma Logo" />
+    </div>
+    <div class="skill-icon">
+      <img src="images/mysql.png" class="skill-logo" alt="MySQL Logo" />
+    </div>
+    <div class="skill-icon">
+      <img src="images/mongodb.png" class="skill-logo" alt="MongoDB Logo" />
+    </div>
+  </div>
+</section>
+
+
+
+ <!-- education Section -->
     <section id="education">
       <h1 class="t-center my-2 t-white f-2">Education</h1>
       <div class="timeline">
@@ -474,13 +477,15 @@ body {
   <section id="certifications">
     <h1 class="t-white f-2">Certifications</h1>
     <div class="certifications-container">
+
       <div class="certification-item">
-        <img class="certification-image" src="images/c1.jpg" alt="Ethical Hacking for Beginners">
+        <img class="certification-image" src="images/c5.jpg" alt="SQL Essential Training">
         <div class="certification-details">
-          <h2>Web technology</h2>
-          <p>Issued by Rareminds</p>
+          <h2>Android Developer Virtual Internship</h2>
+          <p>Issued by AICTE - EduSkills</p>
         </div>
       </div>
+
       <div class="certification-item">
         <img class="certification-image" src="images/c2.jpg" alt="SQL Essential Training">
         <div class="certification-details">
@@ -489,12 +494,23 @@ body {
         </div>
       </div>
       <div class="certification-item">
+        <img class="certification-image" src="images/c1.jpg" alt="Ethical Hacking for Beginners">
+        <div class="certification-details">
+          <h2>Web technology</h2>
+          <p>Issued by Rareminds</p>
+        </div>
+      </div>
+
+     
+      
+      <div class="certification-item">
         <img class="certification-image" src="images/c3.jpg" alt="Lanqill - English Language - Level 1">
         <div class="certification-details">
           <h2>Lanqill - English Language - Level 1</h2>
           <p>Issued by Lanqill</p>
         </div>
       </div>
+      
       <div class="certification-item">
         <img class="certification-image" src="images/c4.jpg" alt="Lanqill - English Language - Level 2">
         <div class="certification-details">
@@ -560,8 +576,8 @@ body {
       <li><a href="#skills" class="poppinss">Skills</a></li>
       <li><a href="#education" class="poppinss">Education</a></li>
       <li><a href="#projects" class="poppinss">Projects</a></li>
-      <li><a href="#contact" class="poppinss">Contact</a></li>
       <li><a href="#certifications" class="poppinss">Certifications</a></li>
+      <li><a href="#contact" class="poppinss">Contact</a></li>
     </ul>
     <ul class="social-links">
       <li>

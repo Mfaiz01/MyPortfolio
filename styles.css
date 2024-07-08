@@ -176,6 +176,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   height: 100vh; /* Ensure it takes full viewport height */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .home-left {
@@ -183,8 +184,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 1rem; /* Reduce padding to bring elements closer */
-  max-width: 60%; /* Adjust this value to reduce the space */
+  padding-right: 0.25rem; /* Reduce padding to bring elements closer */
+  max-width: 45%; /* Further reduce the width */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+  margin-right: -1rem; /* Negative margin to pull the image closer */
 }
 
 .home-left h6,
@@ -200,7 +203,7 @@ body {
 }
 
 .home-left .btn {
-  margin-right: 1rem;
+  margin-right: 0.5rem; /* Reduce margin between buttons */
   padding: 0.5rem 1rem;
   background-color: #007bff;
   color: white;
@@ -212,11 +215,12 @@ body {
 }
 
 .home-right {
-  flex: 0 0 auto; /* Ensure the right side takes only the necessary width */
+  flex: 0 1 auto; /* Ensure the right side takes only the necessary width */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: -18rem; /* Use negative margin to bring elements closer */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+  margin-left: -1rem; /* Negative margin to pull the image closer */
 }
 
 .circle {
@@ -245,6 +249,7 @@ body {
     max-width: 100%; /* Occupy full width on smaller screens */
     text-align: center; /* Center align content */
     padding: 0; /* Remove padding to make it more compact */
+    margin-right: 0; /* Remove negative margin for smaller screens */
   }
 
   .home-left h1 {
@@ -269,6 +274,8 @@ body {
   }
 
   .circle {
+    width: 15rem; /* Adjust width for smaller screens */
+    height: 15rem; /* Adjust height for smaller screens */
     margin-top: 2rem; /* Add margin to separate circle from content */
   }
 }
@@ -300,88 +307,76 @@ body {
 /* Skills */
 #skills {
   margin-top: 3rem;
+  text-align: center;
 }
 
-.skills-left {
-  width: 50%;
+.skills-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.skills-left img {
-  width: 70%;
+.skill-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+  background-color: transparent;
 }
 
-.skills-right {
-  width: 50%;
+.skill-icon img {
+  width: 6rem; /* Default size for medium to large screens */
+  height: 6rem;
+  object-fit: contain;
+  background-color: transparent;
 }
 
-.skillss-container {
-  width: 100%;
+.skill-icon:hover {
+  transform: scale(1.1);
 }
 
-.html {
-  width: 90%;
-  height: 0.5rem;
-  background-color: #e54c21;
-  margin: 1rem 0;
-  border-radius: 12px;
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .skill-icon img {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 
-.css {
-  width: 80%;
-  height: 0.5rem;
-  background-color: #00a0e4;
-  margin: 1rem 0;
-  border-radius: 12px;
+@media (max-width: 768px) {
+  .skill-icon img {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 
-.js {
-  width: 65%;
-  height: 0.5rem;
-  background-color: yellow;
-  margin: 1rem 0;
-  border-radius: 12px;
+@media (max-width: 480px) {
+  .skill-icon img {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
-.bootstrap {
-  width: 50%;
-  height: 0.5rem;
-  background-color: #7952b3;
-  margin: 1rem 0;
-  border-radius: 12px;
+/* Text Styles */
+.t-center {
+  text-align: center;
 }
 
-.reactjs {
-  width: 30%;
-  height: 0.5rem;
-  background-color: #61dafb;
-  margin: 1rem 0;
-  border-radius: 12px;
-}
-
-.learning {
-  width: 100%;
-  height: 0.5rem;
-  background-color: #61dbfb;
-  margin: 1rem 0;
-  border-radius: 12px;
-}
-
-.bar {
+.my-2 {
   margin: 2rem 0;
 }
 
-.bar-content {
-  position: absolute;
-  bottom: 10px;
+.t-white {
+  color: white;
 }
 
-.left {
-  left: 0;
+.f-2 {
+  font-size: 2rem;
 }
 
-.right-skills {
-  right: 0;
-}
 
 /* Projects Section */
 .projects-container {
