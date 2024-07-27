@@ -200,12 +200,34 @@ body {
 .home-left h1 {
   font-size: 2.5rem;
   color: white;
+  position: relative; /* Positioning context for the typing effect */
+}
+
+.home-left h1 .japanese-name {
+  display: block;
+  font-size: 1.2rem; /* Adjust size if necessary */
+  color: #e0e0e0; /* Slightly different color for differentiation */
+}
+
+.typing-animation {
+  display: inline;
+  border-right: 2px solid #e0e0e0; /* Cursor effect */
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 1.5rem;
+  font-weight: 500;
+  animation: blink 1s step-end infinite; /* Cursor blinking effect */
+}
+
+@keyframes blink {
+  from { border-color: transparent; }
+  to { border-color: #e0e0e0; }
 }
 
 .home-left .btn {
   margin-right: 0.5rem; /* Reduce margin between buttons */
   padding: 0.5rem 1rem;
-  background-color:#008394;
+  background-color: #008394;
   color: black;
   border: none;
   border-radius: 4px;
@@ -280,6 +302,25 @@ body {
   }
 }
 
+.typing-animation {
+  display: inline;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid orange; /* Cursor effect */
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
 
 /* About Section */
 .about-left,
@@ -376,66 +417,199 @@ body {
 .f-2 {
   font-size: 2rem;
 }
+/* Project section */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-/* Projects Section */
+.t-center {
+  text-align: center;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.t-white {
+  color: #fff;
+}
+
+.f-2 {
+  font-size: 2.5rem; /* Font size for project titles */
+  font-weight: 800; /* Heavier font weight for a more prominent look */
+  color: #e0e0e0; /* Light color for titles */
+}
+
+.flex {
+  display: flex;
+}
+
+.s-center {
+  justify-content: center;
+}
+
+.s-around {
+  justify-content: space-around;
+}
+
+.f-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
 .projects-container {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin: auto;
-  flex-wrap: wrap;
+}
+
+.projects-item {
+  width: 100%;
+  max-width: 1200px;
+  margin: 1rem;
+  background: #000000;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid #008394; /* Add border with specified color */
 }
 
 .image-container {
-  width: 100%;
-  height: 200px; /* Set a fixed height for consistency */
+  width: 500px; /* Width of the image container */
+  height: 300px; /* Height of the image container */
   border-radius: 1rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #000000;
+  margin-bottom: 1rem; /* Space between image and text */
+  position: relative; /* Ensure that images are correctly positioned within the container */
 }
 
 .image-container img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover; /* Ensure the image covers the container */
-  height: 100%; /* Ensure the image fills the container */
-}
-
-.image-container .p-one {
-  width: 200px;
-}
-
-.p-three {
-  background: url("project.png");
-}
-
-.p-four {
-  background: url("project.png");
-}
-
-.projects-item {
-  overflow: hidden;
-  width: 20rem;
-  margin: 1rem;
-  background: #000000;
-  border-radius: 1.5rem;
-  padding: 2rem 1rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Adjust to contain the entire image without cropping */
 }
 
 .projects-item h1 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem; /* Font size for project titles */
+  font-weight: 800; /* Heavier font weight for titles */
+  color: #e0e0e0; /* Light color for titles */
+  margin: 1rem 0; /* Space around the title */
+  text-transform: uppercase; /* Uppercase for emphasis */
+  letter-spacing: 1px; /* Slightly increased letter spacing */
 }
 
 .projects-item p {
-  line-height: 20px;
-  font-size: 0.9rem;
+  line-height: 1.8; /* Increased line-height for better readability */
+  font-size: 1.25rem; /* Slightly larger font size for descriptions */
+  max-width: 800px; /* Max width for text block */
+  margin: 0 auto; /* Center align the text block */
+  color: #dcdcdc; /* Slightly lighter color for better contrast */
+  text-align: justify; /* Justify alignment for a professional look */
+  padding: 0 1rem; /* Padding for better readability on smaller screens */
+  font-weight: 600; /* Bolder text for descriptions */
+}
+
+.buttons {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.buttons .btn {
+  background-color: #008394;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  margin: 0.5rem;
+  font-weight: 700; /* Bolder font for buttons */
+  text-transform: uppercase; /* Uppercase text for buttons */
+  border: 2px solid transparent; /* Add a border for visual effect */
+  cursor: pointer; /* Pointer cursor for better UX */
+}
+
+.buttons .btn:hover {
+  background-color: whitesmoke;
+  border-color: white; /* Match border color with background on hover */
+}
+
+@media (max-width: 768px) {
+  .projects-item {
+      padding: 1rem;
+  }
+
+  .image-container {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+  }
+
+  .projects-item p {
+      padding: 0;
+  }
+}
+
+/* Define the slide-up animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Define the slide-down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initial state for projects section */
+#projects {
+  opacity: 0;
+  transform: translateY(50px); /* Initial position for slide-up */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Applied when the section is visible */
+#projects.visible {
+  opacity: 1;
+  transform: translateY(0); /* Final position */
+  animation: slideUp 0.5s forwards;
 }
 
 /* Contact me Section */

@@ -138,11 +138,13 @@
   <div class="home-left">
     <div class="home-content">
       <h6 class="poppins">Hi, I'm</h6>
-      <h1 class="t-white">Mohammed Faiz</h1>
+      <h1 class="t-white">
+        Mohammed Faiz <span class="japanese-name">(モハメド・ファイズ)</span>
+      </h1>
       <h4 class="poppins">
         <span class="typing-animation"></span>
       </h4>
-      <a href="resume.pdf" download="Mohammed_Faiz_Resume.pdf" target="_blank">
+      <a href="myresume2.pdf" download="Mohammed_Faiz_Resume.pdf" target="_blank">
         <button class="btn poppins">Resume</button>
       </a>
       <a class="btn live poppins" id="hireme" href="https://www.linkedin.com/in/mohammed-faiz-pes/">
@@ -157,6 +159,8 @@
   </div>
 </section>
 
+
+
 <script>
   // JavaScript to simulate typing effect
   const texts = [
@@ -165,35 +169,75 @@
     "Aspiring Full Stack Developer.",
     "Frontend Web Developer.",
   ];
+  const japaneseTexts = [
+    "フロントエンドウェブデベロッパー。",
+    "テックに好奇心旺盛。",
+    "フルスタックデベロッパーを目指しています。",
+    "フロントエンドウェブデベロッパー。",
+  ];
+
   let textIndex = 0;
   let index = 0;
-  let loopCount = 0;
-  const maxLoops = texts.length;
+  let isEnglish = true; // Flag to switch between English and Japanese
+  let typingFinished = false; // Flag to indicate typing is complete
 
   function type() {
-    const currentText = texts[textIndex];
+    if (typingFinished) return;
+
+    const currentText = isEnglish ? texts[textIndex] : japaneseTexts[textIndex];
+    
     document.querySelector(".typing-animation").textContent =
       currentText.slice(0, index);
+
     index++;
     if (index <= currentText.length) {
       setTimeout(type, 200); // Continue typing animation
     } else {
-      if (loopCount < maxLoops - 1) {
-        loopCount++;
-        setTimeout(() => {
-          textIndex = (textIndex + 1) % texts.length; // Move to the next text
-          index = 0; // Reset index for the new text
-          setTimeout(type, 500); // Start typing animation for the new text
-        }, 1000); // Wait for 1 second before moving to the next text
-      } else {
-        // Stop animation after all texts have been displayed once
-        return;
-      }
+      setTimeout(() => {
+        isEnglish = !isEnglish; // Toggle between English and Japanese
+        index = 0; // Reset index for the new text
+        if (!isEnglish) {
+          textIndex++; // Move to the next text
+          if (textIndex >= texts.length) {
+            // After finishing all texts, start final loop
+            textIndex = 0; // Reset to "Frontend Web Developer."
+            isEnglish = true; // Start with English
+            typingFinished = true; // Mark typing as finished
+          }
+        }
+        setTimeout(type, 500); // Start typing animation for the new text
+      }, 1000); // Wait for 1 second before switching text
     }
   }
 
-  type(); // Start typing animation
+  function startTyping() {
+    type();
+    // After all texts are displayed, start the final loop for "Frontend Web Developer."
+    setTimeout(() => {
+      function finalLoop() {
+        if (typingFinished) {
+          // Only loop "Frontend Web Developer." in both languages
+          type();
+          setTimeout(() => {
+            isEnglish = !isEnglish; // Toggle between English and Japanese
+            index = 0; // Reset index
+            if (isEnglish) {
+              // Stop looping after Japanese version
+              typingFinished = true;
+              return;
+            }
+            setTimeout(finalLoop, 2000); // Continue looping with a pause
+          }, 2000); // Wait before switching to the next language
+        }
+      }
+      finalLoop();
+    }, (texts.length * 2 + 1) * 200 + 2000); // Timing to start loop after initial phase
+  }
+
+  startTyping(); // Initialize the typing effect
 </script>
+
+
 
  <!-- About Section -->
 <section id="about">
@@ -366,105 +410,127 @@ body {
   </div>
 </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h1 class="t-center my-2 t-white f-2"><br /><br />Projects</h1>
-      <div class="projects-container flex s-center">
-        <div class="projects-item flex f-col s-center items-center">
-          <div class="image-container">
-            <img src="images\f5.png" alt="" />
-          </div>
-          <h1 class="t-white poppins">College Website</h1>
-          <p class="t-white poppins">
-            Crafted using a blend of React.js for dynamic functionality, HTML5
-            for structure, Tailwind CSS for sleek styling, and JavaScript &
-            Bootstrap for enhanced interactivity and responsive design.
-          </p>
-          <div class="buttons flex s-around">
-            <a
-              href="https://github.com/Mfaiz01/Tech-Turtles"
-              class="btn mx-1 m-top"
-              >GitHub</a
-            >
-            <a
-              href="https://mfaiz01.github.io/Tech-Turtles/"
-              class="btn m-top live"
-              >Live Link</a
-            >
-          </div>
-        </div>
-        <div class="projects-item flex f-col s-center items-center">
-          <div class="image-container">
-            <img src="images\f5.png" alt="" />
-          </div>
-          <h1 class="t-white poppins">College Website</h1>
-          <p class="t-white poppins">
-            Crafted using a blend of React.js for dynamic functionality, HTML5
-            for structure, Tailwind CSS for sleek styling, and JavaScript &
-            Bootstrap for enhanced interactivity and responsive design.
-          </p>
-          <div class="buttons flex s-around">
-            <a
-              href="https://github.com/Mfaiz01/Tech-Turtles"
-              class="btn mx-1 m-top"
-              >GitHub</a
-            >
-            <a
-              href="https://mfaiz01.github.io/Tech-Turtles/"
-              class="btn m-top live"
-              >Live Link</a
-            >
-          </div>
-        </div>
-        <div class="projects-item flex f-col s-center items-center">
-          <div class="image-container">
-            <img src="images\f5.png" alt="" />
-          </div>
-          <h1 class="t-white poppins">College Website</h1>
-          <p class="t-white poppins">
-            Crafted using a blend of React.js for dynamic functionality, HTML5
-            for structure, Tailwind CSS for sleek styling, and JavaScript &
-            Bootstrap for enhanced interactivity and responsive design.
-          </p>
-          <div class="buttons flex s-around">
-            <a
-              href="https://github.com/Mfaiz01/Tech-Turtles"
-              class="btn mx-1 m-top"
-              >GitHub</a
-            >
-            <a
-              href="https://mfaiz01.github.io/Tech-Turtles/"
-              class="btn m-top live"
-              >Live Link</a
-            >
-          </div>
-        </div>
-        <div class="projects-item flex f-col s-center items-center">
-          <div class="image-container">
-            <img src="images\f5.png" alt="" />
-          </div>
-          <h1 class="t-white poppins">College Website</h1>
-          <p class="t-white poppins">
-            Crafted using a blend of React.js for dynamic functionality, HTML5
-            for structure, Tailwind CSS for sleek styling, and JavaScript &
-            Bootstrap for enhanced interactivity and responsive design.
-          </p>
-          <div class="buttons flex s-around">
-            <a
-              href="https://github.com/Mfaiz01/Tech-Turtles"
-              class="btn mx-1 m-top"
-              >GitHub</a
-            >
-            <a
-              href="https://mfaiz01.github.io/Tech-Turtles/"
-              class="btn m-top live"
-              >Live Link</a
-            >
-          </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Projects Section -->
+<section id="projects" class="projects">
+  <h1 class="t-center my-2 t-white f-2">Projects</h1>
+  <div class="projects-container">
+    <!-- Project Item 1 -->
+    <div class="projects-item">
+      <div class="image-container">
+        <img src="images/f5.png" alt="College Website">
       </div>
-    </section>
-  
+      <h1 class="t-white">College Website</h1>
+      <p class="t-white">
+        This project features a comprehensive college website developed using a blend of modern web technologies. React.js is utilized for building interactive user interfaces and managing the state of various components. HTML5 provides the foundational structure and semantics for the web pages, while Tailwind CSS is applied for sleek, utility-first styling, ensuring a responsive and modern design. JavaScript is employed to enhance functionality and interactivity, complemented by Bootstrap for additional UI components and responsive design elements. This project showcases my ability to integrate multiple technologies to create a fully functional and aesthetically pleasing website.
+      </p>
+      <div class="buttons">
+        <a href="https://github.com/Mfaiz01/Tech-Turtles" class="btn">GitHub</a>
+        <a href="https://mfaiz01.github.io/Tech-Turtles/" class="btn live">Live Link</a>
+      </div>
+    </div>
+
+    <!-- Project Item 2 -->
+    <div class="projects-item">
+      <div class="image-container">
+        <img src="images/p2.jpg" alt="CodePen clone">
+      </div>
+      <h1 class="t-white">CodePen Clone</h1>
+      <p class="t-white">
+        The CodePen Clone project is a sophisticated text editor designed to replicate the functionality of CodePen, a popular online code editor. Developed using React.js, HTML5, CSS, and JavaScript, this project features live code preview and editor panes, providing an interactive and dynamic user experience. Material.io is integrated to deliver modern and visually appealing UI components. The project demonstrates my proficiency in creating interactive web applications with a focus on user interface and experience.
+      </p>
+      <div class="buttons">
+        <a href="https://github.com/Mfaiz01/code-pen-clone" class="btn">GitHub</a>
+        <a href="https://mfaiz01.github.io/code-pen-clone/" class="btn live">Live Link</a>
+      </div>
+    </div>
+
+    <!-- Project Item 3 -->
+    <div class="projects-item">
+      <div class="image-container">
+        <img src="images/p3.png" alt="ChatterPro">
+      </div>
+      <h1 class="t-white">ChatterPro</h1>
+      <p class="t-white">
+        ChatterPro is a real-time messaging application designed to facilitate seamless communication between users. Built with React.js for the frontend and using Tailwind CSS for modern, responsive design, this project incorporates JavaScript for dynamic interactions. The backend functionality is powered by ChatEngine.io, which handles real-time messaging, user authentication, and chat functionalities. This project highlights my skills in integrating frontend technologies with real-time backend services to deliver a robust chat application.
+      </p>
+      <div class="buttons">
+        <a href="https://github.com/Mfaiz01/Chat-Application" class="btn">GitHub</a>
+        <a href="https://github.com/Mfaiz01/Chat-Application" class="btn live">Live Link</a>
+      </div>
+    </div>
+
+    <!-- Project Item 4 -->
+    <div class="projects-item">
+      <div class="image-container">
+        <img src="images/p4.png" alt="Tic-Tac-Toe Game">
+      </div>
+      <h1 class="t-white">Tic-Tac-Toe Game</h1>
+      <p class="t-white">
+        This project is a classic console-based Tic-Tac-Toe game implemented in C. It features a straightforward and user-friendly interface that allows two players to compete in real-time. The game includes essential functionalities such as move validation, win detection, and a draw condition. This project showcases my proficiency in C programming, including logic implementation and handling user input in a console environment.
+      </p>
+      <div class="buttons">
+        <a href="https://github.com/Mfaiz01/Tic-Tac-toe-game" class="btn">GitHub</a>
+        <a href="https://github.com/Mfaiz01/Tic-Tac-toe-game" class="btn live">Live Link</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+  const projectsSection = document.querySelector('#projects');
+
+  // Function to handle adding the 'visible' class
+  const handleScroll = () => {
+    const sectionTop = projectsSection.getBoundingClientRect().top;
+    const viewportHeight = window.innerHeight;
+
+    if (sectionTop < viewportHeight * 0.8) {
+      projectsSection.classList.add('visible');
+    }
+  };
+
+  // Listen for scroll events
+  window.addEventListener('scroll', handleScroll);
+
+  // Trigger the scroll handler on page load
+  handleScroll();
+});
+
+</script>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const targetId = this.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    
+    if (targetSection) {
+      window.scrollTo({
+        top: targetSection.offsetTop,
+        behavior: 'smooth'
+      });
+      
+      // Add the visible class after scrolling to the section
+      setTimeout(() => {
+        targetSection.classList.add('visible');
+      }, 500); // Delay to match the scroll animation
+    }
+  });
+});
+
+</script>
 
     <!-- Certification Section -->
   <section id="certifications">
