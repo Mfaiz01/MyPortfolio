@@ -34,7 +34,8 @@
   <style>
     /* CSS for the typing animation */
     .typing-animation::after {
-      content: "|"; /* Cursor */
+      content: "|";
+      /* Cursor */
       animation: blink-caret 1s infinite;
     }
 
@@ -59,6 +60,7 @@
       alert(`Sorry Request cannot be accepted due to some technical errors`);
     });
   </script>
+
   <body>
     <nav class="navbar">
       <div class="content">
@@ -95,10 +97,12 @@
 
       #typewriter {
         display: inline-block;
-        width: 200px; /* Adjust this value based on the widest text */
+        width: 200px;
+        /* Adjust this value based on the widest text */
         white-space: nowrap;
         overflow: hidden;
-        vertical-align: middle; /* Ensures alignment with the navbar links */
+        vertical-align: middle;
+        /* Ensures alignment with the navbar links */
       }
     </style>
 
@@ -363,19 +367,28 @@
 
     <style>
       body {
-        background-color: black; /* Set background to black */
-        color: #000000; /* Set text color to white */
-        font-family: Arial, sans-serif; /* Adjust the font as needed */
+        background-color: black;
+        /* Set background to black */
+        color: #000000;
+        /* Set text color to white */
+        font-family: Arial, sans-serif;
+        /* Adjust the font as needed */
       }
 
       .about-container {
         padding: 2rem;
-        border: 2px solid #008394; /* Adding border around the About Me section */
-        border-radius: 10px; /* Adding more border-radius for rounded corners */
-        margin: 2rem auto; /* Center the container with auto margin */
-        width: 80%; /* Make the container narrower */
-        box-shadow: #000; /* Adding shadow for better visibility */
-        background-color: #000000; /* Set a dark background color for contrast */
+        border: 2px solid #008394;
+        /* Adding border around the About Me section */
+        border-radius: 10px;
+        /* Adding more border-radius for rounded corners */
+        margin: 2rem auto;
+        /* Center the container with auto margin */
+        width: 80%;
+        /* Make the container narrower */
+        box-shadow: #000;
+        /* Adding shadow for better visibility */
+        background-color: #000000;
+        /* Set a dark background color for contrast */
       }
 
       .t-center {
@@ -397,47 +410,58 @@
       .description {
         font-size: 1.25rem;
         line-height: 1.6;
-        text-align: justify; /* Justify the text */
+        text-align: justify;
+        /* Justify the text */
       }
 
       .button-container {
         margin-top: 1.5rem;
-        text-align: center; /* Center the buttons */
+        text-align: center;
+        /* Center the buttons */
       }
 
       /* Button styles */
       .btn {
         margin: 0.5rem;
         padding: 0.75rem 1.5rem;
-        background-color: #008394; /* Button color matching theme */
+        background-color: #008394;
+        /* Button color matching theme */
         color: #000000;
-        border: 2px solid #008394; /* Matching border to button color */
+        border: 2px solid #008394;
+        /* Matching border to button color */
         border-radius: 4px;
         cursor: pointer;
         text-decoration: none;
         display: inline-block;
-        transition: background-color 0.3s, color 0.3s; /* Add transitions for smooth hover effect */
+        transition: background-color 0.3s, color 0.3s;
+        /* Add transitions for smooth hover effect */
       }
 
       .btn:hover {
-        background-color: black; /* On hover, background becomes transparent */
-        color: #008394; /* Text color changes to match button border */
+        background-color: black;
+        /* On hover, background becomes transparent */
+        color: #008394;
+        /* Text color changes to match button border */
       }
 
       /* Adjustments for smaller screens */
       @media (max-width: 768px) {
         .about-container {
           padding: 1rem;
-          width: 95%; /* Adjust width for smaller screens */
-          margin: 2rem auto; /* Center the container on smaller screens */
+          width: 95%;
+          /* Adjust width for smaller screens */
+          margin: 2rem auto;
+          /* Center the container on smaller screens */
         }
 
         .f-2 {
-          font-size: 1.5rem; /* Adjust font size for smaller screens */
+          font-size: 1.5rem;
+          /* Adjust font size for smaller screens */
         }
 
         .description {
-          font-size: 1rem; /* Adjust font size for smaller screens */
+          font-size: 1rem;
+          /* Adjust font size for smaller screens */
         }
       }
     </style>
@@ -478,7 +502,7 @@
       <h1 class="t-center my-2 t-white f-2">Education / 教育</h1>
       <div class="button-container t-center">
         <button id="toggleButton" class="toggle-button">
-          <i class="fas fa-language"></i> Toggle Language
+          <i class="fas fa-language"></i> English / 日本語
         </button>
       </div>
       <div class="timeline">
@@ -533,6 +557,7 @@
         <title>Projects</title>
         <link rel="stylesheet" href="styles.css" />
       </head>
+
       <body>
         <!-- Projects Section -->
         <section id="projects" class="projects">
@@ -752,7 +777,7 @@
           <h1 class="t-white f-2">Certifications / 認証<br /><br /></h1>
           <div class="button-container t-center">
             <button id="toggleCertButton" class="toggle-button">
-              <i class="fas fa-language"></i> Toggle Language
+              <i class="fas fa-language"></i> English / 日本語
             </button>
           </div>
           <div class="certifications-container">
@@ -921,6 +946,7 @@
           </div>
         </section>
 
+        <!-- Footer Section -->
         <footer id="footer">
           <ul class="nav-links">
             <li><a href="#home" class="poppinss">Home</a></li>
@@ -952,7 +978,9 @@
           </ul>
           <p class="t-center my-2 poppins">
             &copy; All Rights Reserved -
-            <span class="cpy-white poppins">Mohammed Faiz</span>
+            <span class="cpy-white poppins"
+              >Mohammed Faiz / 全著作権所有 - モハメド・ファイズ</span
+            >
           </p>
         </footer>
 
