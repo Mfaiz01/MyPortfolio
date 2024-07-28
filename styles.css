@@ -76,7 +76,7 @@ body {
   transition: all 0.3s ease;
 }
 .menu-list li a:hover {
-  color:#008394;
+  color: #008394;
 }
 .banner {
   height: 100vh;
@@ -165,7 +165,7 @@ body {
   padding: 0;
   background-color: #000; /* Set background to black */
   color: white; /* Ensure all text is white */
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .home-container {
@@ -220,8 +220,12 @@ body {
 }
 
 @keyframes blink {
-  from { border-color: transparent; }
-  to { border-color: #e0e0e0; }
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: #e0e0e0;
+  }
 }
 
 .home-left .btn {
@@ -304,7 +308,7 @@ body {
 
 .typing-animation {
   display: inline;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: white;
   font-size: 1.5rem;
   white-space: nowrap;
@@ -314,35 +318,13 @@ body {
 }
 
 @keyframes blink-caret {
-  from, to {
+  from,
+  to {
     border-color: transparent;
   }
   50% {
     border-color: orange;
   }
-}
-
-/* About Section */
-.about-left,
-.about-right {
-  width: 48%;
-}
-
-.about-right {
-  padding-right: 4rem;
-}
-
-.aboout-left {
-  position: relative;
-}
-
-.about-left img {
-  width: 90%;
-  border-radius: 1rem;
-}
-
-.about-content p {
-  margin-bottom: 2rem;
 }
 
 /* Skills */
@@ -418,9 +400,30 @@ body {
   font-size: 2rem;
 }
 /* Project section */
+/* Toggle Button Styling */
+.toggle-btn {
+  background-color: #004d61; /* Background color */
+  color: #ffffff; /* Text color */
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  margin: 1rem 0;
+  font-weight: 700; /* Bolder font for buttons */
+  text-transform: uppercase; /* Uppercase text for buttons */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor for better UX */
+}
+
+.toggle-btn:hover {
+  background-color: #006f8c; /* Background color on hover */
+  color: #ffffff; /* Text color on hover */
+}
+
+/* Projects Section CSS remains unchanged */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #000;
+  font-family: "Poppins", sans-serif;
+  background-color: #008394;
   color: #fff;
   margin: 0;
   padding: 0;
@@ -440,13 +443,13 @@ a {
 }
 
 .t-white {
-  color: #fff;
+  color: #000000;
 }
 
 .f-2 {
   font-size: 2.5rem; /* Font size for project titles */
   font-weight: 800; /* Heavier font weight for a more prominent look */
-  color: #e0e0e0; /* Light color for titles */
+  color: #008394; /* Light color for titles */
 }
 
 .flex {
@@ -541,7 +544,7 @@ a {
 
 .buttons .btn {
   background-color: #008394;
-  color: #fff;
+  color: #000000;
   padding: 0.75rem 1.25rem;
   border-radius: 0.5rem;
   transition: background-color 0.3s ease;
@@ -554,24 +557,62 @@ a {
 }
 
 .buttons .btn:hover {
-  background-color: whitesmoke;
-  border-color: white; /* Match border color with background on hover */
+  background-color: white; /* On hover, background becomes transparent */
+  color: #008394; /* Text color changes to match button border */
 }
 
 @media (max-width: 768px) {
   .projects-item {
-      padding: 1rem;
+    padding: 1rem;
   }
 
   .image-container {
-      width: 100%;
-      height: auto;
-      margin-bottom: 1rem;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
   }
 
   .projects-item p {
-      padding: 0;
+    padding: 0;
   }
+}
+
+/* Define the slide-up animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Define the slide-down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initial state for projects section */
+#projects {
+  opacity: 0;
+  transform: translateY(50px); /* Initial position for slide-up */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Applied when the section is visible */
+#projects.visible {
+  opacity: 1;
+  transform: translateY(0); /* Final position */
+  animation: slideUp 0.5s forwards;
 }
 
 /* Define the slide-up animation */
@@ -638,7 +679,7 @@ textarea {
 /* General Styles */
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #000;
   color: #fff;
 }
@@ -875,7 +916,7 @@ body {
 .btn {
   margin-left: 0 0.5rem;
   font-size: 1rem;
-  color:#00bcd4;
+  color: #00bcd4;
   cursor: pointer;
   padding: 0.75rem 1.2rem;
   border: 1px solid #00bcd4;
@@ -897,24 +938,23 @@ body {
 
 .live {
   color: #000000;
-  background-color:#008394;
+  background-color: #008394;
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #000;
   color: #fff;
   margin: 0;
   padding: 0;
 }
-
 /* Education section */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
 
 #education {
   background: linear-gradient(135deg, #0000 0%, #0000 100%);
   padding: 60px 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #fff;
 }
 
@@ -929,7 +969,7 @@ body {
 .f-2 {
   font-size: 2.5rem;
   font-weight: 700;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
 .timeline {
@@ -939,10 +979,10 @@ body {
 }
 
 .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 6px;
-  background-color:#008394;
+  background-color: #008394;
   top: 0;
   bottom: 0;
   left: 50%;
@@ -968,7 +1008,7 @@ body {
 }
 
 .timeline-item::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 20px;
   height: 20px;
@@ -1009,14 +1049,67 @@ body {
   margin: 0;
   font-size: 1.5rem;
   color: #008394;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
 .timeline-content p {
   margin: 0;
   color: #ddd;
   font-size: 1.1rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+.button-container {
+  margin-bottom: 20px;
+}
+
+.toggle-button {
+  background-color: #008394;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.toggle-button:hover {
+  background-color: #005f63;
+  transform: scale(1.05);
+}
+
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #008394;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 20px;
+  display: none;
+  z-index: 1000;
+}
+
+.scroll-to-top-button:hover {
+  background-color: #005f63;
+  transform: scale(1.1);
+}
+
+.certification-item {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.certification-item.hidden {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
 }
 
 @keyframes fadeInUp {
@@ -1087,7 +1180,6 @@ body {
     font-size: 1.5rem;
   }
 }
-
 
 /* Contact Me Section */
 .contact-container {
@@ -1188,8 +1280,156 @@ body {
   z-index: 9999;
 }
 
- /* Certification Section Styles */
- #certifications {
+/* Common Styles */
+.button-container {
+  margin-bottom: 20px;
+}
+
+.button-container button {
+  background-color: #008394;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #005f67;
+  transform: translateY(-2px);
+}
+
+/* Education Section Styles */
+#education {
+  background: linear-gradient(135deg, #0000 0%, #0000 100%);
+  padding: 60px 0;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.f-2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Orbitron", sans-serif;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: #008394;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #008394;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item.left::after {
+  right: -10px;
+}
+
+.timeline-item.right::after {
+  left: -10px;
+}
+
+.timeline-content {
+  padding: 20px;
+  background-color: rgba(31, 31, 56, 0.9);
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-content:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.timeline-content .icon {
+  color: #008394;
+  margin-bottom: 10px;
+}
+
+.timeline-content h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #008394;
+  font-family: "Orbitron", sans-serif;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #ddd;
+  font-size: 1.1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.edu-en {
+  display: block;
+}
+
+.edu-jp {
+  display: none;
+}
+
+/* Certification Section Styles */
+#certifications {
   background-color: #000000;
   padding: 60px 0;
   text-align: center;
@@ -1203,7 +1443,6 @@ body {
 }
 
 .certification-item {
-
   border-radius: 10px;
   width: 300px;
   padding: 10px;
@@ -1229,7 +1468,7 @@ body {
 }
 
 .certification-details h2 {
-  color:#00bcd4;
+  color: #00bcd4;
   margin: 10px 0;
   font-size: 18px;
 }
@@ -1240,17 +1479,10 @@ body {
   font-size: 16px;
 }
 
-.download-button {
-  background-color: #008394;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.cert-en {
+  display: block;
 }
 
-.download-button:hover {
-  background-color:#008394;
+.cert-jp {
+  display: none;
 }
-
