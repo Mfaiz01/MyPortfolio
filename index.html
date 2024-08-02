@@ -693,7 +693,7 @@
                   >GitHub</a
                 >
                 <a
-                  href="https://portfolio-theta-nine-83.vercel.app/"
+                  href="https://portfolio-iyxs0qnm0-mfaiz01s-projects.vercel.app/"
                   class="btn live"
                   >Live Link</a
                 >
@@ -703,7 +703,20 @@
             <!-- Project Item 4 -->
             <div class="projects-item">
               <div class="image-container">
-                <img src="images/p3.png" alt="ChatterPro" />
+                <img
+                  id="image-chatterpro"
+                  src="images/p3.png"
+                  alt="ChatterPro"
+                />
+                <video
+                  id="video-chatterpro"
+                  class="project-video"
+                  style="display: none"
+                  controls
+                >
+                  <source src="images/r2.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <h1 class="t-white">ChatterPro / チャタープロ</h1>
               <button class="toggle-btn" onclick="toggleLanguage(this)">
@@ -740,62 +753,148 @@
                   class="btn"
                   >GitHub</a
                 >
-                <a
-                  href="https://github.com/Mfaiz01/Chat-Application"
+                <button
                   class="btn live"
-                  >Live Link</a
+                  onclick="playVideo('image-chatterpro', 'video-chatterpro')"
                 >
+                Video Preview
+                </button>
               </div>
             </div>
 
             <!-- Project Item 5 -->
             <div class="projects-item">
               <div class="image-container">
-                <img src="images/p4.png" alt="Tic-Tac-Toe Game" />
+                <img
+                  id="image-miniurl"
+                  src="images/pp5.png"
+                  alt="MiniURL URL Shortener"
+                />
+                <video
+                  id="video-miniurl"
+                  class="project-video"
+                  style="display: none"
+                  controls
+                >
+                  <source src="images/r1.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
-              <h1 class="t-white">Tic-Tac-Toe Game / 三目並べゲーム</h1>
+              <h1 class="t-white">MiniURL URL Shortener / ミニURL</h1>
               <button class="toggle-btn" onclick="toggleLanguage(this)">
                 日本語に切り替え
               </button>
               <p class="t-white english">
-                <strong>Project:</strong> Tic-Tac-Toe Game<br />
-                <strong>Issue:</strong> The need for a simple console-based game
-                that allows two players to compete.<br />
-                <strong>Purpose:</strong> To implement a classic Tic-Tac-Toe
-                game in C with features such as move validation, win detection,
-                and draw condition.<br />
+                <strong>Project:</strong> MiniURL URL Shortener<br />
+                <strong>Issue:</strong> The need for a reliable and efficient
+                URL shortener to manage long URLs.<br />
+                <strong>Purpose:</strong> To build a URL shortener application
+                with functionalities for creating and managing shortened URLs
+                using Python and Django.<br />
                 <strong>Team Size:</strong> I worked on this project
                 individually.<br />
-                <strong>Role:</strong> I developed the game logic and user
-                interface in C, ensuring functionality for move validation, win
-                detection, and handling user input.
+                <strong>Role:</strong> I developed the backend using Python and
+                Django, designed the user interface with HTML5 and Tailwind CSS,
+                and implemented features for URL shortening and management.
               </p>
               <p class="t-white japanese" style="display: none">
-                <strong>プロジェクト:</strong> 三目並べゲーム<br />
+                <strong>プロジェクト:</strong> ミニURL<br />
                 <strong>問題:</strong>
-                2人のプレイヤーが競い合うことができるシンプルなコンソールベースのゲームの必要性。<br />
+                長いURLを管理するための信頼性が高く効率的なURL短縮ツールの必要性。<br />
                 <strong>目的:</strong>
-                Cでクラシックな三目並べゲームを実装し、移動の検証、勝利の検出、引き分け条件などの機能を含めること。<br />
+                PythonとDjangoを使用して、URLの短縮と管理の機能を備えたURL短縮アプリケーションを構築すること。<br />
                 <strong>チームサイズ:</strong>
                 このプロジェクトは個人で作業しました。<br />
                 <strong>役割:</strong>
-                Cでゲームロジックとユーザーインターフェイスを開発し、移動の検証、勝利の検出、ユーザー入力の処理を実装しました。
+                PythonとDjangoを使用してバックエンドを開発し、HTML5とTailwind
+                CSSでユーザーインターフェイスをデザインし、URL短縮と管理の機能を実装しました。
               </p>
               <div class="buttons">
-                <a
-                  href="https://github.com/Mfaiz01/Tic-Tac-toe-game"
-                  class="btn"
+                <a href="https://github.com/Mfaiz01/MiniURL" class="btn"
                   >GitHub</a
                 >
-                <a
-                  href="https://github.com/Mfaiz01/Tic-Tac-toe-game"
+                <button
                   class="btn live"
-                  >Live Link</a
+                  onclick="playVideo('image-miniurl', 'video-miniurl')"
                 >
+                Video Preview
+                </button>
               </div>
             </div>
-          </div>
+
+         
+
+            <!-- Project Item 6 -->
+<div class="projects-item">
+  <div class="image-container">
+    <img id="image-tictactoe" src="images/p4.png" alt="Tic-Tac-Toe Game" />
+    <video id="video-tictactoe" class="project-video" style="display: none;" controls>
+      <source src="images/r3.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <h1 class="t-white">Tic-Tac-Toe Game / 三目並べゲーム</h1>
+  <button class="toggle-btn" onclick="toggleLanguage(this)">
+    日本語に切り替え
+  </button>
+  <p class="t-white english">
+    <strong>Project:</strong> Tic-Tac-Toe Game<br />
+    <strong>Issue:</strong> The need for a simple console-based game that allows two players to compete.<br />
+    <strong>Purpose:</strong> To implement a classic Tic-Tac-Toe game in C with features such as move validation, win detection, and draw condition.<br />
+    <strong>Team Size:</strong> I worked on this project individually.<br />
+    <strong>Role:</strong> I developed the game logic and user interface in C, ensuring functionality for move validation, win detection, and handling user input.
+  </p>
+  <p class="t-white japanese" style="display: none">
+    <strong>プロジェクト:</strong> 三目並べゲーム<br />
+    <strong>問題:</strong> 2人のプレイヤーが競い合うことができるシンプルなコンソールベースのゲームの必要性。<br />
+    <strong>目的:</strong> Cでクラシックな三目並べゲームを実装し、移動の検証、勝利の検出、引き分け条件などの機能を含めること。<br />
+    <strong>チームサイズ:</strong> このプロジェクトは個人で作業しました。<br />
+    <strong>役割:</strong> Cでゲームロジックとユーザーインターフェイスを開発し、移動の検証、勝利の検出、ユーザー入力の処理を実装しました。
+  </p>
+  <div class="buttons">
+    <a href="https://github.com/Mfaiz01/Tic-Tac-toe-game" class="btn">GitHub</a>
+    <button class="btn live" onclick="playVideo('image-tictactoe', 'video-tictactoe')">Video Preview</button>
+  </div>
+</div>
+
         </section>
+
+        <script>
+          function playVideo(imageId, videoId) {
+const image = document.getElementById(imageId);
+const video = document.getElementById(videoId);
+
+if (image && video) {
+  image.style.display = 'none';
+  video.style.display = 'block';
+  video.play();
+}
+}
+
+function toggleLanguage(button) {
+const projectItem = button.closest('.projects-item');
+const englishText = projectItem.querySelector('.english');
+const japaneseText = projectItem.querySelector('.japanese');
+
+if (englishText.style.display === 'none') {
+  englishText.style.display = 'block';
+  japaneseText.style.display = 'none';
+  button.textContent = '日本語に切り替え';
+} else {
+  englishText.style.display = 'none';
+  japaneseText.style.display = 'block';
+  button.textContent = '英語に切り替え';
+}
+}
+
+          </script>
+        <style>
+          .project-video {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+        </style>
 
         <script>
           function toggleLanguage(button) {
@@ -982,54 +1081,53 @@
           };
         </script>
 
-    <!-- Contact Me Section -->
-<section id="contact" class="m-b-1">
-  <br /><br />
-  <h1 class="t-center my-2 t-white f-2">Contact Me / 私に連絡して</h1>
-  <div class="contact-container">
-    <div class="form">
-      <form action="" id="contactForm">
-        <div class="form-row">
-          <div class="form-div">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              class="poppins"
-              placeholder="Your Name"
-            />
+        <!-- Contact Me Section -->
+        <section id="contact" class="m-b-1">
+          <br /><br />
+          <h1 class="t-center my-2 t-white f-2">Contact Me / 私に連絡して</h1>
+          <div class="contact-container">
+            <div class="form">
+              <form action="" id="contactForm">
+                <div class="form-row">
+                  <div class="form-div">
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      class="poppins"
+                      placeholder="Your Name"
+                    />
+                  </div>
+                  <div class="form-div">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="poppins"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-div">
+                  <textarea
+                    name="text"
+                    id="textarea"
+                    cols="30"
+                    rows="10"
+                    class="poppins"
+                    placeholder="Your Message"
+                  ></textarea>
+                </div>
+                <div class="submit-btn">
+                  <button type="submit" class="btn poppins" id="submit">
+                    Send
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="form-div">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              class="poppins"
-              placeholder="Your Email"
-              required
-            />
-          </div>
-        </div>
-        <div class="form-div">
-          <textarea
-            name="text"
-            id="textarea"
-            cols="30"
-            rows="10"
-            class="poppins"
-            placeholder="Your Message"
-          ></textarea>
-        </div>
-        <div class="submit-btn">
-          <button type="submit" class="btn poppins" id="submit">
-            Send
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
+        </section>
 
         <!-- Footer Section -->
         <footer id="footer">
@@ -1069,38 +1167,37 @@
           </p>
         </footer>
 
-<script>
-  function scrolltop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
+        <script>
+          function scrolltop() {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }
 
-  let contactForm = document.getElementById("contactForm");
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+          let contactForm = document.getElementById("contactForm");
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-    // Creating a notification element
-    let notification = document.createElement("div");
-    notification.classList.add("notification");
+            // Creating a notification element
+            let notification = document.createElement("div");
+            notification.classList.add("notification");
 
-    // Creating content with English and Japanese text
-    notification.innerHTML = `
+            // Creating content with English and Japanese text
+            notification.innerHTML = `
       <p>Sorry, request cannot be accepted due to some technical errors.</p>
       <p>申し訳ありませんが、技術的な問題によりリクエストを受け付けることができません。</p>
     `;
 
-    // Appending the notification to the body
-    document.body.appendChild(notification);
+            // Appending the notification to the body
+            document.body.appendChild(notification);
 
-    // Remove the notification after a certain time (e.g., 5 seconds)
-    setTimeout(() => {
-      notification.remove();
-    }, 5000);
-  });
-</script>
-
+            // Remove the notification after a certain time (e.g., 5 seconds)
+            setTimeout(() => {
+              notification.remove();
+            }, 5000);
+          });
+        </script>
 
         <div id="scroll-top" onclick="scrolltop()">
           <span><i class="fa-solid fa-arrow-up"></i></span>
