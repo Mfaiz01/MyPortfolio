@@ -7,6 +7,8 @@
     <title>Mohammed Faiz</title>
     <link rel="icon" type="image/x-icon" href="/Images/f4.png" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -1081,53 +1083,66 @@ if (englishText.style.display === 'none') {
           };
         </script>
 
-        <!-- Contact Me Section -->
-        <section id="contact" class="m-b-1">
-          <br /><br />
-          <h1 class="t-center my-2 t-white f-2">Contact Me / 私に連絡して</h1>
-          <div class="contact-container">
-            <div class="form">
-              <form action="" id="contactForm">
-                <div class="form-row">
-                  <div class="form-div">
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      class="poppins"
-                      placeholder="Your Name"
-                    />
-                  </div>
-                  <div class="form-div">
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      class="poppins"
-                      placeholder="Your Email"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="form-div">
-                  <textarea
-                    name="text"
-                    id="textarea"
-                    cols="30"
-                    rows="10"
-                    class="poppins"
-                    placeholder="Your Message"
-                  ></textarea>
-                </div>
-                <div class="submit-btn">
-                  <button type="submit" class="btn poppins" id="submit">
-                    Send
-                  </button>
-                </div>
-              </form>
-            </div>
+      <!-- Contact Me Section -->
+<section id="contact" class="m-b-1">
+  <br /><br />
+  <h1 class="t-center my-2 t-white f-2">Contact Me / 私に連絡して</h1>
+  <div class="contact-container">
+    <div class="form">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <!-- Replace with your Access Key -->
+        <input type="hidden" name="access_key" value="8f9be4e1-78a7-4a2e-a4c9-65c295c0881b">
+
+        <!-- Form Inputs -->
+        <div class="form-row">
+          <div class="form-div">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="poppins"
+              placeholder="Your Name"
+              required
+            />
           </div>
-        </section>
+          <div class="form-div">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="poppins"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-div">
+          <textarea
+            name="message"
+            id="textarea"
+            cols="30"
+            rows="10"
+            class="poppins"
+            placeholder="Your Message"
+            required
+          ></textarea>
+        </div>
+        <!-- Honeypot Spam Protection -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <!-- Custom Confirmation / Success Page (Optional) -->
+        <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+        <div class="submit-btn">
+          <button type="submit" class="btn poppins" id="submit">
+            Send
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
 
         <!-- Footer Section -->
         <footer id="footer">
@@ -1175,28 +1190,7 @@ if (englishText.style.display === 'none') {
             });
           }
 
-          let contactForm = document.getElementById("contactForm");
-          contactForm.addEventListener("submit", function (e) {
-            e.preventDefault();
 
-            // Creating a notification element
-            let notification = document.createElement("div");
-            notification.classList.add("notification");
-
-            // Creating content with English and Japanese text
-            notification.innerHTML = `
-      <p>Sorry, request cannot be accepted due to some technical errors.</p>
-      <p>申し訳ありませんが、技術的な問題によりリクエストを受け付けることができません。</p>
-    `;
-
-            // Appending the notification to the body
-            document.body.appendChild(notification);
-
-            // Remove the notification after a certain time (e.g., 5 seconds)
-            setTimeout(() => {
-              notification.remove();
-            }, 5000);
-          });
         </script>
 
         <div id="scroll-top" onclick="scrolltop()">
