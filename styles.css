@@ -388,6 +388,7 @@ body {
 }
 
 @keyframes blink-caret {
+
   from,
   to {
     border-color: transparent;
@@ -570,7 +571,7 @@ a {
 
 .projects-item {
   width: 100%;
-  max-width: 1200px;
+  max-width: 923.1px;
   margin: 1rem;
   background: #000000;
   border-radius: 1.5rem;
@@ -581,13 +582,19 @@ a {
   align-items: center;
   border: 3px solid #008394;
   /* Add border with specified color */
+  overflow: hidden;
+  /* Hide overflow to prevent scroll */
+  box-sizing: border-box;
+  /* Include padding and border in element's total width and height */
 }
 
 .image-container {
-  width: 500px;
-  /* Width of the image container */
+  width: 100%;
+  /* Use 100% width for responsive design */
+  max-width: 500px;
+  /* Set a max width to maintain size */
   height: 300px;
-  /* Height of the image container */
+  /* Fixed height */
   border-radius: 1rem;
   overflow: hidden;
   display: flex;
@@ -595,51 +602,60 @@ a {
   align-items: center;
   background-color: #000000;
   margin-bottom: 1rem;
-  /* Space between image and text */
   position: relative;
-  /* Ensure that images are correctly positioned within the container */
 }
 
 .image-container img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  /* Adjust to contain the entire image without cropping */
+  /* Ensures the entire image is visible */
+  object-position: center;
+  /* Center the image within the container */
 }
 
-.projects-item h1 {
-  font-size: 2.5rem;
-  /* Font size for project titles */
-  font-weight: 800;
-  /* Heavier font weight for titles */
-  color: #e0e0e0;
-  /* Light color for titles */
-  margin: 1rem 0;
-  /* Space around the title */
-  text-transform: uppercase;
-  /* Uppercase for emphasis */
-  letter-spacing: 1px;
-  /* Slightly increased letter spacing */
+
+@media (max-width: 768px) {
+  .image-container {
+    height: 200px;
+    /* Adjust height for smaller screens */
+  }
 }
+
 
 .projects-item p {
   line-height: 1.8;
-  /* Increased line-height for better readability */
   font-size: 1.25rem;
-  /* Slightly larger font size for descriptions */
   max-width: 800px;
-  /* Max width for text block */
   margin: 0 auto;
-  /* Center align the text block */
   color: #dcdcdc;
-  /* Slightly lighter color for better contrast */
   text-align: justify;
-  /* Justify alignment for a professional look */
   padding: 0 1rem;
-  /* Padding for better readability on smaller screens */
   font-weight: 600;
-  /* Bolder text for descriptions */
+  flex-shrink: 1;
+  /* Allow text to shrink to fit within the container */
 }
+
+@media (max-width: 768px) {
+  .projects-item {
+    padding: 1rem;
+    height: auto;
+    /* Adjust height for smaller screens */
+  }
+
+  .image-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .projects-item p {
+    padding: 0;
+  }
+}
+
+
+
 
 .buttons {
   margin-top: 1rem;
@@ -897,6 +913,7 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+
   .nav-links,
   .social-links {
     flex-direction: column;
