@@ -1,1236 +1,1236 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mohammed Faiz</title>
-    <link rel="icon" type="image/x-icon" href="/Images/f4.png" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammed Faiz</title>
+  <link rel="icon" type="image/x-icon" href="/Images/f4.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet" />
 
-    <link
-      rel="stylesheet"
-      media="screen and (max-width: 821px)"
-      href="responsive.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-  </head>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+  <link rel="stylesheet" media="screen and (max-width: 821px)" href="responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+<style>
+  /* CSS for the typing animation */
+  .typing-animation::after {
+    content: "|";
+    /* Cursor */
+    animation: blink-caret 1s infinite;
+  }
+
+  /* Keyframe animation for the cursor blinking */
+  @keyframes blink-caret {
+    50% {
+      opacity: 0;
+    }
+  }
+</style>
+<script>
+  function scrolltop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
+  let contact = document.getElementById("contactForm");
+  contact.addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert(`Sorry Request cannot be accepted due to some technical errors`);
+  });
+</script>
+
+<body>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="#" id="typewriter" style="color: #008394"></a>
+      </div>
+
+      <ul class="menu-list">
+        <li><a href="#home" class="t-white roboto">Home</a></li>
+        <li><a href="#about" class="t-white roboto">About</a></li>
+        <li><a href="#skills" class="t-white roboto">Skills</a></li>
+        <li><a href="#education" class="t-white roboto">Education</a></li>
+        <li><a href="#projects" class="t-white roboto">Projects</a></li>
+        <li>
+          <a href="#certifications" class="t-white roboto">Certifications</a>
+        </li>
+        <li><a href="#contact" class="t-white roboto">Contact</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="icon cancel-btn">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+  </nav>
+
   <style>
-    /* CSS for the typing animation */
-    .typing-animation::after {
-      content: "|";
-      /* Cursor */
-      animation: blink-caret 1s infinite;
+    .navbar .content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    /* Keyframe animation for the cursor blinking */
-    @keyframes blink-caret {
-      50% {
-        opacity: 0;
-      }
+    #typewriter {
+      display: inline-block;
+      width: 200px;
+      /* Adjust this value based on the widest text */
+      white-space: nowrap;
+      overflow: hidden;
+      vertical-align: middle;
+      /* Ensures alignment with the navbar links */
     }
   </style>
+
   <script>
-    function scrolltop() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
+    document.addEventListener("DOMContentLoaded", function () {
+      const body = document.querySelector("body");
+      const navbar = document.querySelector(".navbar");
+      const menu = document.querySelector(".menu-list");
+      const menuBtn = document.querySelector(".menu-btn");
+      const cancelBtn = document.querySelector(".cancel-btn");
+      const typewriterElement = document.getElementById("typewriter");
+
+      const texts = ["Portfolio", "ポートフォリオ"];
+      let currentIndex = 0;
+      let currentText = "";
+      let currentCharIndex = 0;
+      let cycleCount = 0;
+      const maxCycles = 2; // Stop after 2 cycles (English -> Japanese -> English)
+
+      function typeText() {
+        if (cycleCount >= maxCycles) {
+          typewriterElement.textContent = texts[0]; // Ensure "Portfolio" remains visible
+          return;
+        }
+
+        if (currentCharIndex < texts[currentIndex].length) {
+          currentText += texts[currentIndex].charAt(currentCharIndex);
+          typewriterElement.textContent = currentText;
+          currentCharIndex++;
+          setTimeout(typeText, 200);
+        } else {
+          setTimeout(deleteText, 1000);
+        }
+      }
+
+      function deleteText() {
+        if (cycleCount >= maxCycles) {
+          return; // Stop deleting if max cycles are reached
+        }
+
+        if (currentCharIndex > 0) {
+          currentText = currentText.slice(0, -1);
+          typewriterElement.textContent = currentText;
+          currentCharIndex--;
+          setTimeout(deleteText, 100);
+        } else {
+          currentIndex = (currentIndex + 1) % texts.length;
+          cycleCount++;
+          setTimeout(typeText, 200);
+        }
+      }
+
+      typeText();
+
+      menuBtn.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevents click event from propagating to parent elements
+        menu.classList.add("active");
+        menuBtn.classList.add("hide");
+        cancelBtn.classList.add("show");
+        body.classList.add("disabledScroll");
       });
-    }
 
-    let contact = document.getElementById("contactForm");
-    contact.addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert(`Sorry Request cannot be accepted due to some technical errors`);
-    });
-  </script>
+      cancelBtn.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevents click event from propagating to parent elements
+        menu.classList.remove("active");
+        menuBtn.classList.remove("hide");
+        cancelBtn.classList.remove("show");
+        body.classList.remove("disabledScroll");
+      });
 
-  <body>
-    <nav class="navbar">
-      <div class="content">
-        <div class="logo">
-          <a href="#" id="typewriter" style="color: #008394"></a>
-        </div>
-
-        <ul class="menu-list">
-          <li><a href="#home" class="t-white roboto">Home</a></li>
-          <li><a href="#about" class="t-white roboto">About</a></li>
-          <li><a href="#skills" class="t-white roboto">Skills</a></li>
-          <li><a href="#education" class="t-white roboto">Education</a></li>
-          <li><a href="#projects" class="t-white roboto">Projects</a></li>
-          <li>
-            <a href="#certifications" class="t-white roboto">Certifications</a>
-          </li>
-          <li><a href="#contact" class="t-white roboto">Contact</a></li>
-        </ul>
-        <div class="icon menu-btn">
-          <i class="fas fa-bars"></i>
-        </div>
-        <div class="icon cancel-btn">
-          <i class="fas fa-times"></i>
-        </div>
-      </div>
-    </nav>
-
-    <style>
-      .navbar .content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      #typewriter {
-        display: inline-block;
-        width: 200px;
-        /* Adjust this value based on the widest text */
-        white-space: nowrap;
-        overflow: hidden;
-        vertical-align: middle;
-        /* Ensures alignment with the navbar links */
-      }
-    </style>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const body = document.querySelector("body");
-        const navbar = document.querySelector(".navbar");
-        const menu = document.querySelector(".menu-list");
-        const menuBtn = document.querySelector(".menu-btn");
-        const cancelBtn = document.querySelector(".cancel-btn");
-        const typewriterElement = document.getElementById("typewriter");
-
-        const texts = ["Portfolio", "ポートフォリオ"];
-        let currentIndex = 0;
-        let currentText = "";
-        let currentCharIndex = 0;
-        let cycleCount = 0;
-        const maxCycles = 2; // Stop after 2 cycles (English -> Japanese -> English)
-
-        function typeText() {
-          if (cycleCount >= maxCycles) {
-            typewriterElement.textContent = texts[0]; // Ensure "Portfolio" remains visible
-            return;
-          }
-
-          if (currentCharIndex < texts[currentIndex].length) {
-            currentText += texts[currentIndex].charAt(currentCharIndex);
-            typewriterElement.textContent = currentText;
-            currentCharIndex++;
-            setTimeout(typeText, 200);
-          } else {
-            setTimeout(deleteText, 1000);
-          }
-        }
-
-        function deleteText() {
-          if (cycleCount >= maxCycles) {
-            return; // Stop deleting if max cycles are reached
-          }
-
-          if (currentCharIndex > 0) {
-            currentText = currentText.slice(0, -1);
-            typewriterElement.textContent = currentText;
-            currentCharIndex--;
-            setTimeout(deleteText, 100);
-          } else {
-            currentIndex = (currentIndex + 1) % texts.length;
-            cycleCount++;
-            setTimeout(typeText, 200);
-          }
-        }
-
-        typeText();
-
-        menuBtn.addEventListener("click", function (event) {
-          event.stopPropagation(); // Prevents click event from propagating to parent elements
-          menu.classList.add("active");
-          menuBtn.classList.add("hide");
-          cancelBtn.classList.add("show");
-          body.classList.add("disabledScroll");
-        });
-
-        cancelBtn.addEventListener("click", function (event) {
-          event.stopPropagation(); // Prevents click event from propagating to parent elements
+      // Close the menu when clicking outside of it
+      document.addEventListener("click", function (event) {
+        if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
           menu.classList.remove("active");
           menuBtn.classList.remove("hide");
           cancelBtn.classList.remove("show");
           body.classList.remove("disabledScroll");
-        });
+        }
+      });
 
-        // Close the menu when clicking outside of it
-        document.addEventListener("click", function (event) {
-          if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+      window.addEventListener("scroll", function () {
+        navbar.classList.toggle("sticky", window.scrollY > 20);
+      });
+
+      // Enable navigation for small devices
+      const menuLinks = document.querySelectorAll(".menu-list li a");
+      menuLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (menu.classList.contains("active")) {
             menu.classList.remove("active");
             menuBtn.classList.remove("hide");
             cancelBtn.classList.remove("show");
             body.classList.remove("disabledScroll");
           }
         });
+      });
+    });
+  </script>
 
-        window.addEventListener("scroll", function () {
-          navbar.classList.toggle("sticky", window.scrollY > 20);
-        });
+  <!-- Home Section -->
+  <section id="home" class="home-container">
+    <div class="home-left">
+      <div class="home-content">
+        <h6 class="poppins">Hi, I'm</h6>
+        <h1 class="t-white">
+          Mohammed Faiz
+          <span class="japanese-name">(モハメド・ファイズ)</span>
+        </h1>
+        <h4 class="poppins">
+          <span class="typing-animation"></span>
+        </h4>
+        <button class="btn poppins" id="resumeBtn">Resume</button>
+        <a class="btn live poppins" id="hireme" href="https://www.linkedin.com/in/mohammed-faiz-pes/">
+          Let's Talk
+        </a>
+      </div>
+    </div>
+    <div class="home-right">
+      <div class="circle" id="mainImage">
+        <!-- Removed the img tag and used background-image instead -->
+      </div>
+    </div>
+  </section>
 
-        // Enable navigation for small devices
-        const menuLinks = document.querySelectorAll(".menu-list li a");
-        menuLinks.forEach(function (link) {
-          link.addEventListener("click", function () {
-            if (menu.classList.contains("active")) {
-              menu.classList.remove("active");
-              menuBtn.classList.remove("hide");
-              cancelBtn.classList.remove("show");
-              body.classList.remove("disabledScroll");
+  <!-- Resume Modal -->
+  <div id="resumeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Select Resume Language</h2>
+      <div class="resume-options">
+        <a href="myresume2(ENG).pdf" download="Mohammed_Faiz_Resume_ENG.pdf" target="_blank">
+          <button class="btn poppins dark-theme">English Resume</button>
+        </a>
+        <a href="myresume2(JPN).pdf" download="Mohammed_Faiz_Resume_JPN.pdf" target="_blank">
+          <button class="btn poppins dark-theme">Japanese Resume</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <style>
+    /* Modal styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      background-color: #000000;
+      color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #000000;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .close {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .resume-options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .resume-options button {
+      margin: 10px 0;
+      padding: 10px 20px;
+      background-color: #008394;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .resume-options button:hover {
+      background-color: white;
+    }
+  </style>
+
+  <script>
+    // JavaScript to handle modal functionality
+    const modal = document.getElementById("resumeModal");
+    const btn = document.getElementById("resumeBtn");
+    const span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function () {
+      modal.style.display = "block";
+    };
+
+    span.onclick = function () {
+      modal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+
+    // JavaScript to simulate typing effect
+    const texts = [
+      "Frontend Web Developer.",
+      "Tech Curious.",
+      "Aspiring Full Stack Developer.",
+      "Frontend Web Developer.",
+    ];
+    const japaneseTexts = [
+      "フロントエンドウェブデベロッパー。",
+      "テックに好奇心旺盛。",
+      "フルスタックデベロッパーを目指しています。",
+      "フロントエンドウェブデベロッパー。",
+    ];
+
+    let textIndex = 0;
+    let index = 0;
+    let isEnglish = true;
+    let typingFinished = false;
+
+    function type() {
+      if (typingFinished) return;
+
+      const currentText = isEnglish ? texts[textIndex] : japaneseTexts[textIndex];
+
+      document.querySelector(".typing-animation").textContent = currentText.slice(0, index);
+
+      index++;
+      if (index <= currentText.length) {
+        setTimeout(type, 200);
+      } else {
+        setTimeout(() => {
+          isEnglish = !isEnglish;
+          index = 0;
+          if (!isEnglish) {
+            textIndex++;
+            if (textIndex >= texts.length) {
+              textIndex = 0;
+              isEnglish = true;
+              typingFinished = true;
+            }
+          }
+          setTimeout(type, 500);
+        }, 1000);
+      }
+    }
+
+    function startTyping() {
+      type();
+      setTimeout(() => {
+        function finalLoop() {
+          if (typingFinished) {
+            type();
+            setTimeout(() => {
+              isEnglish = !isEnglish;
+              index = 0;
+              if (isEnglish) {
+                typingFinished = true;
+                return;
+              }
+              setTimeout(finalLoop, 2000);
+            }, 2000);
+          }
+        }
+        finalLoop();
+      }, (texts.length * 2 + 1) * 200 + 2000);
+    }
+
+    startTyping();
+  </script>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about-container">
+      <h1 class="t-center my-2 t-white f-2">About Me / 自分について</h1>
+      <div class="about-content" id="englishContent">
+        <p class="description">
+          Seeking to apply my expertise in front-end web development and
+          technical prowess as a Full Stack Developer. Dedicated to
+          spearheading transformative projects, from concept to execution, and
+          delivering top-tier solutions that drive measurable outcomes.
+          Committed to mastering diverse technologies, including both frontend
+          and backend stacks, to excel as a multifaceted engineer. Eager to
+          contribute my skills and drive success in future endeavours,
+          leveraging a holistic understanding of software development to
+          tackle complex challenges head-on.
+        </p>
+      </div>
+      <div class="about-content" id="japaneseContent" style="display: none">
+        <p class="description">
+          フロントエンドのウェブ開発と技術的な腕前の専門知識を活かして、フルスタック開発者として活躍することを目指しています。コンセプトから実行まで変革的なプロジェクトを先導し、測定可能な成果をもたらす一流のソリューションを提供することに専念しています。フロントエンドとバックエンドの両方のスタックを含む多様な技術を習得し、多面的なエンジニアとして優れた成果を上げることにコミットしています。将来の取り組みにおいて、私のスキルを活かして成功に貢献し、ソフトウェア開発に関する包括的な理解を活用して複雑な課題に正面から取り組むことを切望しています。
+        </p>
+      </div>
+      <div class="button-container">
+        <button class="btn" id="hireMeButton">Hire Me</button>
+        <button class="btn" id="translateButton">日本語</button>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </section>
+
+  <script>
+    document
+      .getElementById("translateButton")
+      .addEventListener("click", function () {
+        const englishContent = document.getElementById("englishContent");
+        const japaneseContent = document.getElementById("japaneseContent");
+
+        if (englishContent.style.display === "none") {
+          englishContent.style.display = "block";
+          japaneseContent.style.display = "none";
+          this.textContent = "日本語";
+        } else {
+          englishContent.style.display = "none";
+          japaneseContent.style.display = "block";
+          this.textContent = "English";
+        }
+      });
+  </script>
+
+  <style>
+    body {
+      background-color: black;
+      /* Set background to black */
+      color: #000000;
+      /* Set text color to white */
+      font-family: Arial, sans-serif;
+      /* Adjust the font as needed */
+    }
+
+    .about-container {
+      padding: 2rem;
+      border: 2px solid #008394;
+      /* Adding border around the About Me section */
+      border-radius: 10px;
+      /* Adding more border-radius for rounded corners */
+      margin: 2rem auto;
+      /* Center the container with auto margin */
+      width: 80%;
+      /* Make the container narrower */
+      box-shadow: #000;
+      /* Adding shadow for better visibility */
+      background-color: #000000;
+      /* Set a dark background color for contrast */
+    }
+
+    .t-center {
+      text-align: center;
+    }
+
+    .my-2 {
+      margin: 2rem 0;
+    }
+
+    .t-white {
+      color: #000000;
+    }
+
+    .f-2 {
+      font-size: 2rem;
+    }
+
+    .description {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      text-align: justify;
+      /* Justify the text */
+    }
+
+    .button-container {
+      margin-top: 1.5rem;
+      text-align: center;
+      /* Center the buttons */
+    }
+
+    /* Button styles */
+    .btn {
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #008394;
+      /* Button color matching theme */
+      color: #000000;
+      border: 2px solid #008394;
+      /* Matching border to button color */
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+      /* Add transitions for smooth hover effect */
+    }
+
+    .btn:hover {
+      background-color: black;
+      /* On hover, background becomes transparent */
+      color: #008394;
+      /* Text color changes to match button border */
+    }
+
+    /* Adjustments for smaller screens */
+    @media (max-width: 768px) {
+      .about-container {
+        padding: 1rem;
+        width: 95%;
+        /* Adjust width for smaller screens */
+        margin: 2rem auto;
+        /* Center the container on smaller screens */
+      }
+
+      .f-2 {
+        font-size: 1.5rem;
+        /* Adjust font size for smaller screens */
+      }
+
+      .description {
+        font-size: 1rem;
+        /* Adjust font size for smaller screens */
+      }
+    }
+  </style>
+  <!-- Skills Section -->
+  <section id="skills">
+    <br /><br />
+    <h1 class="t-center my-2 t-white f-2">Skills / スキル</h1>
+    <div class="skills-container flex s-center h-50">
+      <div class="skill-icon">
+        <img src="images/c.png" class="skill-logo" alt="C Logo" />
+      </div>
+      <div class="skill-icon">
+        <img src="images/html.webp" class="skill-logo" alt="HTML Logo" />
+      </div>
+      <div class="skill-icon">
+        <img src="images/css.png" class="skill-logo" alt="CSS Logo" />
+      </div>
+      <div class="skill-icon">
+        <img src="images/js.webp" class="skill-logo" alt="JavaScript Logo" />
+      </div>
+      <div class="skill-icon">
+        <img src="images/react.png" class="skill-logo" alt="React Logo" />
+      </div>
+      <div class="skill-icon">
+        <img src="images/node1.png" class="skill-logo" alt="node Logo" />
+      </div>
+      <div class="skill-icon">
+        <img src="images/mysql.png" class="skill-logo" alt="MySQL Logo" />
+      </div>
+      <div class="skill-icon">
+        <img src="images/mongodb.png" class="skill-logo" alt="MongoDB Logo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h1 class="t-center my-2 t-white f-2">Education / 教育</h1>
+    <div class="button-container t-center">
+      <button id="toggleButton" class="toggle-button">
+        <i class="fas fa-language"></i> English / 日本語
+      </button>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <i class="fas fa-school fa-2x icon"></i>
+          <div class="timeline-text">
+            <h2>2016-2019</h2>
+            <p class="en">Secondary Education</p>
+            <p class="jp">中等教育</p>
+            <p class="en">Farooqia Boys's High School, Mysuru</p>
+            <p class="jp">ファルキアボーイズ高校、マイソール</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <i class="fas fa-user-graduate fa-2x icon"></i>
+          <div class="timeline-text">
+            <h2>2019-2022</h2>
+            <p class="en">High School Diploma</p>
+            <p class="jp">高等学校卒業証書</p>
+            <p class="en">D.Banumiah's Polytechnic, Mysuru</p>
+            <p class="jp">D.バヌミア工業高校、マイソール</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <i class="fas fa-university fa-2x icon"></i>
+          <div class="timeline-text">
+            <h2>2023-2025</h2>
+            <p class="en">
+              Bachelor of Engineering (Computer Science and Engineering)
+            </p>
+            <p class="jp">
+              工学士（コンピュータサイエンスとエンジニアリング）
+            </p>
+            <p class="en">PES College Of Engineering, Mandya</p>
+            <p class="jp">PES工科大学、マンドヤ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <h1 class="t-center my-2 t-white f-2">Projects / プロジェクト</h1>
+      <div class="projects-container">
+        <!-- Project Item 1 -->
+        <div class="projects-item">
+          <div class="image-container">
+            <img src="images/p2.jpg" alt="CodePen Clone" />
+          </div>
+          <h1 class="t-white">CodePen Clone / コードペンクローン</h1>
+          <button class="toggle-btn" onclick="toggleLanguage(this)">
+            日本語に切り替え
+          </button>
+          <p class="t-white english">
+            <strong>Project:</strong> CodePen Clone<br />
+            <strong>Issue:</strong> The need for a platform that allows
+            users to write, test, and showcase HTML, CSS, and JavaScript
+            code snippets.<br />
+            <strong>Purpose:</strong> To create a tool for users to create
+            and share code snippets with live previews in an interactive
+            editor.<br />
+            <strong>Team Size:</strong> I worked on this project
+            individually.<br />
+            <strong>Role:</strong> I designed and developed the application,
+            including the editor for writing code, live preview
+            functionality, and user interface design.
+          </p>
+          <p class="t-white japanese" style="display: none">
+            <strong>プロジェクト:</strong> CodePen Clone<br />
+            <strong>問題:</strong>
+            ユーザーがHTML、CSS、JavaScriptのコードスニペットを作成、テスト、共有できるプラットフォームの必要性。<br />
+            <strong>目的:</strong>
+            インタラクティブなエディタでライブプレビュー付きのコードスニペットを作成および共有できるツールを作成すること。<br />
+            <strong>チームサイズ:</strong>
+            このプロジェクトは個人で作業しました。<br />
+            <strong>役割:</strong>
+            コードを書くためのエディタ、ライブプレビュー機能、ユーザーインターフェイスデザインを含むアプリケーションの設計と開発を担当しました。
+          </p>
+          <div class="buttons">
+            <a href="https://github.com/Mfaiz01/code-pen-clone" class="btn">GitHub</a>
+            <a href="https://mfaiz01.github.io/code-pen-clone/" class="btn live">Live Link</a>
+          </div>
+        </div>
+
+        <!-- Project Item 2 -->
+        <div class="projects-item">
+          <div class="image-container">
+            <img src="images/r7.png" alt="CareerPath ATS" />
+          </div>
+          <h1 class="t-white">CareerPath ATS / キャリアパスATS</h1>
+          <button class="toggle-btn" onclick="toggleLanguage(this)">
+            日本語に切り替え
+          </button>
+          <p class="t-white english">
+            <strong>Project:</strong> CareerPath ATS<br />
+            <strong>Issue:</strong> The need for an efficient and user-friendly resume tracking system.<br />
+            <strong>Purpose:</strong> To create a resume tracking system using Python, Google Gemini Pro Vision LIM
+            Model, and Streamlit as the framework and deployment platform.<br />
+            <strong>Team Size:</strong> I worked on this project individually.<br />
+            <strong>Role:</strong> I was responsible for designing and developing the entire application, including
+            integrating the Google Gemini Pro Vision LIM Model with Streamlit and ensuring effective performance and
+            usability.
+          </p>
+          <p class="t-white japanese" style="display: none">
+            <strong>プロジェクト:</strong> CareerPath ATS<br />
+            <strong>問題:</strong>
+            効率的で使いやすい履歴書追跡システムの必要性。<br />
+            <strong>目的:</strong> Python、Google Gemini Pro Vision LIM Model、Streamlitを使用して履歴書追跡システムを作成すること。<br />
+            <strong>チームサイズ:</strong>
+            このプロジェクトは個人で作業しました。<br />
+            <strong>役割:</strong>
+            Google Gemini Pro Vision LIM ModelをStreamlitと統合し、効果的なパフォーマンスと使いやすさを確保するためにアプリケーション全体の設計と開発を担当しました。
+          </p>
+          <div class="buttons">
+            <a href="https://github.com/Mfaiz01/ATS-Tracking-System" class="btn">GitHub</a>
+            <a href="https://careerpath-ats-tracking-system.streamlit.app/" class="btn live">Live Link</a>
+          </div>
+        </div>
+
+
+        <!-- Project Item 3 -->
+        <div class="projects-item">
+          <div class="image-container">
+            <img src="images/f5.png" alt="College Website" />
+          </div>
+          <h1 class="t-white">College Website / 大学のウェブサイト</h1>
+          <button class="toggle-btn" onclick="toggleLanguage(this)">
+            日本語に切り替え
+          </button>
+          <p class="t-white english">
+            <strong>Project:</strong> College Website<br />
+            <strong>Issue:</strong> The need for a comprehensive and
+            interactive website for a college.<br />
+            <strong>Purpose:</strong> To build a functional and
+            aesthetically pleasing college website using React.js, HTML5,
+            Tailwind CSS, JavaScript, and Bootstrap.<br />
+            <strong>Team Size:</strong> I worked on this project
+            individually.<br />
+            <strong>Role:</strong> I handled the design and development of
+            the website, including the implementation of interactive
+            elements, responsive design, and integration of various
+            technologies.
+          </p>
+          <p class="t-white japanese" style="display: none">
+            <strong>プロジェクト:</strong> 大学のウェブサイト<br />
+            <strong>問題:</strong>
+            大学のための包括的でインタラクティブなウェブサイトの必要性。<br />
+            <strong>目的:</strong> React.js、HTML5、Tailwind
+            CSS、JavaScript、およびBootstrapを使用して機能的で美しい大学のウェブサイトを構築すること。<br />
+            <strong>チームサイズ:</strong>
+            このプロジェクトは個人で作業しました。<br />
+            <strong>役割:</strong>
+            インタラクティブな要素、レスポンシブデザインの実装、およびさまざまな技術の統合を含むウェブサイトのデザインと開発を担当しました。
+          </p>
+          <div class="buttons">
+            <a href="https://github.com/Mfaiz01/Tech-Turtles" class="btn">GitHub</a>
+            <a href="https://mfaiz01.github.io/Tech-Turtles/" class="btn live">Live Link</a>
+          </div>
+        </div>
+
+        <!-- Project Item 4 -->
+        <div class="projects-item">
+          <div class="image-container">
+            <img src="images/p5.png" alt="SpacePortfolio" />
+          </div>
+          <h1 class="t-white">SpacePortfolio / スペースポートフォリオ</h1>
+          <button class="toggle-btn" onclick="toggleLanguage(this)">
+            日本語に切り替え
+          </button>
+          <p class="t-white english">
+            <strong>Project:</strong> SpacePortfolio<br />
+            <strong>Issue:</strong> The need for a modern and responsive
+            portfolio to showcase projects and experiences.<br />
+            <strong>Purpose:</strong> To create a visually appealing and
+            well-organized portfolio using Next.js, HTML5, Tailwind CSS,
+            JavaScript, and TypeScript.<br />
+            <strong>Team Size:</strong> I worked on this project
+            individually.<br />
+            <strong>Role:</strong> I was responsible for designing and
+            developing the entire application, including layout, performance
+            optimization, and integrating the technologies.
+          </p>
+          <p class="t-white japanese" style="display: none">
+            <strong>プロジェクト:</strong> SpacePortfolio<br />
+            <strong>問題:</strong>
+            プロジェクトと経験を紹介するためのモダンでレスポンシブなポートフォリオの必要性。<br />
+            <strong>目的:</strong> Next.js、HTML5、Tailwind
+            CSS、JavaScript、TypeScriptを使用して視覚的に魅力的で整理されたポートフォリオを作成すること。<br />
+            <strong>チームサイズ:</strong>
+            このプロジェクトは個人で作業しました。<br />
+            <strong>役割:</strong>
+            レイアウト、パフォーマンスの最適化、技術の統合を含むアプリケーション全体の設計と開発を担当しました。
+          </p>
+          <div class="buttons">
+            <a href="https://github.com/Mfaiz01/Portfolio" class="btn">GitHub</a>
+            <a href="https://portfolio-iyxs0qnm0-mfaiz01s-projects.vercel.app/" class="btn live">Live Link</a>
+          </div>
+        </div>
+
+        <!-- Project Item 5 -->
+        <div class="projects-item">
+          <div class="image-container">
+            <img id="image-chatterpro" src="images/p3.png" alt="ChatterPro" />
+            <video id="video-chatterpro" class="project-video" style="display: none" controls>
+              <source src="images/r2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h1 class="t-white">ChatterPro / チャタープロ</h1>
+          <button class="toggle-btn" onclick="toggleLanguage(this)">
+            日本語に切り替え
+          </button>
+          <p class="t-white english">
+            <strong>Project:</strong> ChatterPro<br />
+            <strong>Issue:</strong> The need for a real-time messaging
+            application to facilitate seamless communication.<br />
+            <strong>Purpose:</strong> To build a chat application with
+            real-time messaging, user authentication, and chat
+            functionalities using React.js and ChatEngine.io.<br />
+            <strong>Team Size:</strong> I worked on this project
+            individually.<br />
+            <strong>Role:</strong> I developed the frontend using React.js,
+            designed the user interface with Tailwind CSS, and integrated
+            real-time messaging and authentication features.
+          </p>
+          <p class="t-white japanese" style="display: none">
+            <strong>プロジェクト:</strong> ChatterPro<br />
+            <strong>問題:</strong>
+            シームレスなコミュニケーションを促進するためのリアルタイムメッセージングアプリケーションの必要性。<br />
+            <strong>目的:</strong>
+            React.jsとChatEngine.ioを使用してリアルタイムメッセージング、ユーザー認証、チャット機能を備えたチャットアプリケーションを構築すること。<br />
+            <strong>チームサイズ:</strong>
+            このプロジェクトは個人で作業しました。<br />
+            <strong>役割:</strong>
+            React.jsを使用してフロントエンドを開発し、Tailwind
+            CSSでユーザーインターフェイスをデザインし、リアルタイムメッセージングと認証機能を統合しました。
+          </p>
+          <div class="buttons">
+            <a href="https://github.com/Mfaiz01/Chat-Application" class="btn">GitHub</a>
+            <button class="btn live" onclick="playVideo('image-chatterpro', 'video-chatterpro')">
+              Video Preview
+            </button>
+          </div>
+        </div>
+
+        <!-- Project Item 6 -->
+        <div class="projects-item">
+          <div class="image-container">
+            <img id="image-miniurl" src="images/pp5.png" alt="MiniURL URL Shortener" />
+            <video id="video-miniurl" class="project-video" style="display: none" controls>
+              <source src="images/r1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h1 class="t-white">MiniURL URL Shortener / ミニURL</h1>
+          <button class="toggle-btn" onclick="toggleLanguage(this)">
+            日本語に切り替え
+          </button>
+          <p class="t-white english">
+            <strong>Project:</strong> MiniURL URL Shortener<br />
+            <strong>Issue:</strong> The need for a reliable and efficient
+            URL shortener to manage long URLs.<br />
+            <strong>Purpose:</strong> To build a URL shortener application
+            with functionalities for creating and managing shortened URLs
+            using Python and Django.<br />
+            <strong>Team Size:</strong> I worked on this project
+            individually.<br />
+            <strong>Role:</strong> I developed the backend using Python and
+            Django, designed the user interface with HTML5 and Tailwind CSS,
+            and implemented features for URL shortening and management.
+          </p>
+          <p class="t-white japanese" style="display: none">
+            <strong>プロジェクト:</strong> ミニURL<br />
+            <strong>問題:</strong>
+            長いURLを管理するための信頼性が高く効率的なURL短縮ツールの必要性。<br />
+            <strong>目的:</strong>
+            PythonとDjangoを使用して、URLの短縮と管理の機能を備えたURL短縮アプリケーションを構築すること。<br />
+            <strong>チームサイズ:</strong>
+            このプロジェクトは個人で作業しました。<br />
+            <strong>役割:</strong>
+            PythonとDjangoを使用してバックエンドを開発し、HTML5とTailwind
+            CSSでユーザーインターフェイスをデザインし、URL短縮と管理の機能を実装しました。
+          </p>
+          <div class="buttons">
+            <a href="https://github.com/Mfaiz01/MiniURL" class="btn">GitHub</a>
+            <button class="btn live" onclick="playVideo('image-miniurl', 'video-miniurl')">
+              Video Preview
+            </button>
+          </div>
+        </div>
+
+
+
+        <!-- Project Item 7 -->
+        <div class="projects-item">
+          <div class="image-container">
+            <img id="image-tictactoe" src="images/p4.png" alt="Tic-Tac-Toe Game" />
+            <video id="video-tictactoe" class="project-video" style="display: none;" controls>
+              <source src="images/r3.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h1 class="t-white">Tic-Tac-Toe Game / 三目並べゲーム</h1>
+          <button class="toggle-btn" onclick="toggleLanguage(this)">
+            日本語に切り替え
+          </button>
+          <p class="t-white english">
+            <strong>Project:</strong> Tic-Tac-Toe Game<br />
+            <strong>Issue:</strong> The need for a simple console-based game that allows two players to compete.<br />
+            <strong>Purpose:</strong> To implement a classic Tic-Tac-Toe game in C with features such as move
+            validation, win detection, and draw condition.<br />
+            <strong>Team Size:</strong> I worked on this project individually.<br />
+            <strong>Role:</strong> I developed the game logic and user interface in C, ensuring functionality for move
+            validation, win detection, and handling user input.
+          </p>
+          <p class="t-white japanese" style="display: none">
+            <strong>プロジェクト:</strong> 三目並べゲーム<br />
+            <strong>問題:</strong> 2人のプレイヤーが競い合うことができるシンプルなコンソールベースのゲームの必要性。<br />
+            <strong>目的:</strong> Cでクラシックな三目並べゲームを実装し、移動の検証、勝利の検出、引き分け条件などの機能を含めること。<br />
+            <strong>チームサイズ:</strong> このプロジェクトは個人で作業しました。<br />
+            <strong>役割:</strong> Cでゲームロジックとユーザーインターフェイスを開発し、移動の検証、勝利の検出、ユーザー入力の処理を実装しました。
+          </p>
+          <div class="buttons">
+            <a href="https://github.com/Mfaiz01/Tic-Tac-toe-game" class="btn">GitHub</a>
+            <button class="btn live" onclick="playVideo('image-tictactoe', 'video-tictactoe')">Video Preview</button>
+          </div>
+        </div>
+
+    </section>
+
+    <script>
+      function playVideo(imageId, videoId) {
+        const image = document.getElementById(imageId);
+        const video = document.getElementById(videoId);
+
+        if (image && video) {
+          image.style.display = 'none';
+          video.style.display = 'block';
+          video.play();
+        }
+      }
+
+      function toggleLanguage(button) {
+        const projectItem = button.closest('.projects-item');
+        const englishText = projectItem.querySelector('.english');
+        const japaneseText = projectItem.querySelector('.japanese');
+
+        if (englishText.style.display === 'none') {
+          englishText.style.display = 'block';
+          japaneseText.style.display = 'none';
+          button.textContent = '日本語に切り替え';
+        } else {
+          englishText.style.display = 'none';
+          japaneseText.style.display = 'block';
+          button.textContent = '英語に切り替え';
+        }
+      }
+
+    </script>
+    <style>
+      .project-video {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const projectsSection = document.querySelector("#projects");
+
+        // Function to handle adding the 'visible' class
+        const handleScroll = () => {
+          const sectionTop = projectsSection.getBoundingClientRect().top;
+          const viewportHeight = window.innerHeight;
+
+          if (sectionTop < viewportHeight * 0.8) {
+            projectsSection.classList.add("visible");
+          }
+        };
+
+        // Listen for scroll events
+        window.addEventListener("scroll", handleScroll);
+
+        // Trigger the scroll handler on page load
+        handleScroll();
+
+        // Handle smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+              window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: "smooth",
+              });
+
+              // Add the visible class after scrolling to the section
+              setTimeout(() => {
+                targetSection.classList.add("visible");
+              }, 500); // Delay to match the scroll animation
             }
           });
         });
       });
-    </script>
 
-    <!-- Home Section -->
-    <section id="home" class="home-container">
-      <div class="home-left">
-        <div class="home-content">
-          <h6 class="poppins">Hi, I'm</h6>
-          <h1 class="t-white">
-            Mohammed Faiz
-            <span class="japanese-name">(モハメド・ファイズ)</span>
-          </h1>
-          <h4 class="poppins">
-            <span class="typing-animation"></span>
-          </h4>
-          <a
-            href="myresume2.pdf"
-            download="Mohammed_Faiz_Resume.pdf"
-            target="_blank"
-          >
-            <button class="btn poppins">Resume</button>
-          </a>
-          <a
-            class="btn live poppins"
-            id="hireme"
-            href="https://www.linkedin.com/in/mohammed-faiz-pes/"
-          >
-            Let's Talk
-          </a>
-        </div>
-      </div>
-      <div class="home-right">
-        <div class="circle" id="mainImage">
-          <!-- Removed the img tag and used background-image instead -->
-        </div>
-      </div>
-    </section>
+      // Function to open video in a new tab
+      function playVideo(imageId, videoId) {
+        const videoElement = document.getElementById(videoId);
+        const videoSrc = videoElement.querySelector('source').src;
 
-    <script>
-      // JavaScript to simulate typing effect
-      const texts = [
-        "Frontend Web Developer.",
-        "Tech Curious.",
-        "Aspiring Full Stack Developer.",
-        "Frontend Web Developer.",
-      ];
-      const japaneseTexts = [
-        "フロントエンドウェブデベロッパー。",
-        "テックに好奇心旺盛。",
-        "フルスタックデベロッパーを目指しています。",
-        "フロントエンドウェブデベロッパー。",
-      ];
-
-      let textIndex = 0;
-      let index = 0;
-      let isEnglish = true; // Flag to switch between English and Japanese
-      let typingFinished = false; // Flag to indicate typing is complete
-
-      function type() {
-        if (typingFinished) return;
-
-        const currentText = isEnglish
-          ? texts[textIndex]
-          : japaneseTexts[textIndex];
-
-        document.querySelector(".typing-animation").textContent =
-          currentText.slice(0, index);
-
-        index++;
-        if (index <= currentText.length) {
-          setTimeout(type, 200); // Continue typing animation
-        } else {
-          setTimeout(() => {
-            isEnglish = !isEnglish; // Toggle between English and Japanese
-            index = 0; // Reset index for the new text
-            if (!isEnglish) {
-              textIndex++; // Move to the next text
-              if (textIndex >= texts.length) {
-                // After finishing all texts, start final loop
-                textIndex = 0; // Reset to "Frontend Web Developer."
-                isEnglish = true; // Start with English
-                typingFinished = true; // Mark typing as finished
-              }
-            }
-            setTimeout(type, 500); // Start typing animation for the new text
-          }, 1000); // Wait for 1 second before switching text
+        if (videoSrc) {
+          // Open the video in a new tab
+          window.open(videoSrc, '_blank');
         }
       }
 
-      function startTyping() {
-        type();
-        // After all texts are displayed, start the final loop for "Frontend Web Developer."
-        setTimeout(() => {
-          function finalLoop() {
-            if (typingFinished) {
-              // Only loop "Frontend Web Developer." in both languages
-              type();
-              setTimeout(() => {
-                isEnglish = !isEnglish; // Toggle between English and Japanese
-                index = 0; // Reset index
-                if (isEnglish) {
-                  // Stop looping after Japanese version
-                  typingFinished = true;
-                  return;
-                }
-                setTimeout(finalLoop, 2000); // Continue looping with a pause
-              }, 2000); // Wait before switching to the next language
-            }
-          }
-          finalLoop();
-        }, (texts.length * 2 + 1) * 200 + 2000); // Timing to start loop after initial phase
+      // Function to toggle between English and Japanese text
+      function toggleLanguage(button) {
+        const projectItem = button.closest('.projects-item');
+        const englishText = projectItem.querySelector('.english');
+        const japaneseText = projectItem.querySelector('.japanese');
+
+        if (englishText.style.display === 'none') {
+          englishText.style.display = 'block';
+          japaneseText.style.display = 'none';
+          button.textContent = '日本語に切り替え';
+        } else {
+          englishText.style.display = 'none';
+          japaneseText.style.display = 'block';
+          button.textContent = '英語に切り替え';
+        }
       }
 
-      startTyping(); // Initialize the typing effect
     </script>
-
-    <!-- About Section -->
-    <section id="about">
-      <div class="about-container">
-        <h1 class="t-center my-2 t-white f-2">About Me / 自分について</h1>
-        <div class="about-content" id="englishContent">
-          <p class="description">
-            Seeking to apply my expertise in front-end web development and
-            technical prowess as a Full Stack Developer. Dedicated to
-            spearheading transformative projects, from concept to execution, and
-            delivering top-tier solutions that drive measurable outcomes.
-            Committed to mastering diverse technologies, including both frontend
-            and backend stacks, to excel as a multifaceted engineer. Eager to
-            contribute my skills and drive success in future endeavours,
-            leveraging a holistic understanding of software development to
-            tackle complex challenges head-on.
-          </p>
+    <!-- Certification Section -->
+    <section id="certifications">
+      <br />
+      <h1 class="t-white f-2">Certifications / 認証<br /><br /></h1>
+      <div class="button-container t-center">
+        <button id="toggleCertButton" class="toggle-button">
+          <i class="fas fa-language"></i> English / 日本語
+        </button>
+      </div>
+      <div class="certifications-container">
+        <div class="certification-item">
+          <img class="certification-image" src="images/c2.jpg" alt="Android Developer Virtual Internship" />
+          <div class="certification-details">
+            <h2 class="cert-en">Android Developer Virtual Internship</h2>
+            <h2 class="cert-jp">Android開発者仮想インターンシップ</h2>
+            <p class="cert-en">Issued by AICTE - EduSkills</p>
+            <p class="cert-jp">発行者 AICTE - EduSkills</p>
+          </div>
         </div>
-        <div class="about-content" id="japaneseContent" style="display: none">
-          <p class="description">
-            フロントエンドのウェブ開発と技術的な腕前の専門知識を活かして、フルスタック開発者として活躍することを目指しています。コンセプトから実行まで変革的なプロジェクトを先導し、測定可能な成果をもたらす一流のソリューションを提供することに専念しています。フロントエンドとバックエンドの両方のスタックを含む多様な技術を習得し、多面的なエンジニアとして優れた成果を上げることにコミットしています。将来の取り組みにおいて、私のスキルを活かして成功に貢献し、ソフトウェア開発に関する包括的な理解を活用して複雑な課題に正面から取り組むことを切望しています。
-          </p>
+        <div class="certification-item">
+          <img class="certification-image" src="images/c5.jpg" alt="AI-ML Virtual Internship" />
+          <div class="certification-details">
+            <h2 class="cert-en">AI-ML Virtual Internship</h2>
+            <h2 class="cert-jp">AI-ML仮想インターンシップ</h2>
+            <p class="cert-en">Issued by AICTE - EduSkills</p>
+            <p class="cert-jp">発行者 AICTE - EduSkills</p>
+          </div>
         </div>
-        <div class="button-container">
-          <button class="btn" id="hireMeButton">Hire Me</button>
-          <button class="btn" id="translateButton">日本語</button>
+        <div class="certification-item">
+          <img class="certification-image" src="images/c1.jpg" alt="Web technology" />
+          <div class="certification-details">
+            <h2 class="cert-en">Web technology</h2>
+            <h2 class="cert-jp">ウェブ技術</h2>
+            <p class="cert-en">Issued by Rareminds</p>
+            <p class="cert-jp">発行者 Rareminds</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <img class="certification-image" src="images/c3.jpg" alt="Lanqill - English Language - Level 1" />
+          <div class="certification-details">
+            <h2 class="cert-en">Lanqill - English Language - Level 1</h2>
+            <h2 class="cert-jp">Lanqill - 英語 - レベル 1</h2>
+            <p class="cert-en">Issued by Lanqill</p>
+            <p class="cert-jp">発行者 Lanqill</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <img class="certification-image" src="images/c4.jpg" alt="Lanqill - English Language - Level 2" />
+          <div class="certification-details">
+            <h2 class="cert-en">Lanqill - English Language - Level 2</h2>
+            <h2 class="cert-jp">Lanqill - 英語 - レベル 2</h2>
+            <p class="cert-en">Issued by Lanqill</p>
+            <p class="cert-jp">発行者 Lanqill</p>
+          </div>
         </div>
       </div>
-
-      <script src="scripts.js"></script>
     </section>
 
     <script>
       document
-        .getElementById("translateButton")
+        .getElementById("toggleButton")
         .addEventListener("click", function () {
-          const englishContent = document.getElementById("englishContent");
-          const japaneseContent = document.getElementById("japaneseContent");
-
-          if (englishContent.style.display === "none") {
-            englishContent.style.display = "block";
-            japaneseContent.style.display = "none";
-            this.textContent = "日本語";
-          } else {
-            englishContent.style.display = "none";
-            japaneseContent.style.display = "block";
-            this.textContent = "English";
-          }
+          const enElements = document.querySelectorAll("#education .en");
+          const jpElements = document.querySelectorAll("#education .jp");
+          enElements.forEach(
+            (el) =>
+            (el.style.display =
+              el.style.display === "none" ? "block" : "none")
+          );
+          jpElements.forEach(
+            (el) =>
+            (el.style.display =
+              el.style.display === "none" ? "block" : "none")
+          );
         });
+
+      document
+        .getElementById("toggleCertButton")
+        .addEventListener("click", function () {
+          const certEnElements = document.querySelectorAll(".cert-en");
+          const certJpElements = document.querySelectorAll(".cert-jp");
+          certEnElements.forEach(
+            (el) =>
+            (el.style.display =
+              el.style.display === "none" ? "block" : "none")
+          );
+          certJpElements.forEach(
+            (el) =>
+            (el.style.display =
+              el.style.display === "none" ? "block" : "none")
+          );
+        });
+
+      // Initialize by showing English text and hiding Japanese text for both sections
+      window.onload = function () {
+        const eduEnElements = document.querySelectorAll("#education .en");
+        const eduJpElements = document.querySelectorAll("#education .jp");
+        const certEnElements = document.querySelectorAll(".cert-en");
+        const certJpElements = document.querySelectorAll(".cert-jp");
+
+        eduEnElements.forEach((el) => (el.style.display = "block"));
+        eduJpElements.forEach((el) => (el.style.display = "none"));
+        certEnElements.forEach((el) => (el.style.display = "block"));
+        certJpElements.forEach((el) => (el.style.display = "none"));
+      };
     </script>
 
-    <style>
-      body {
-        background-color: black;
-        /* Set background to black */
-        color: #000000;
-        /* Set text color to white */
-        font-family: Arial, sans-serif;
-        /* Adjust the font as needed */
-      }
-
-      .about-container {
-        padding: 2rem;
-        border: 2px solid #008394;
-        /* Adding border around the About Me section */
-        border-radius: 10px;
-        /* Adding more border-radius for rounded corners */
-        margin: 2rem auto;
-        /* Center the container with auto margin */
-        width: 80%;
-        /* Make the container narrower */
-        box-shadow: #000;
-        /* Adding shadow for better visibility */
-        background-color: #000000;
-        /* Set a dark background color for contrast */
-      }
-
-      .t-center {
-        text-align: center;
-      }
-
-      .my-2 {
-        margin: 2rem 0;
-      }
-
-      .t-white {
-        color: #000000;
-      }
-
-      .f-2 {
-        font-size: 2rem;
-      }
-
-      .description {
-        font-size: 1.25rem;
-        line-height: 1.6;
-        text-align: justify;
-        /* Justify the text */
-      }
-
-      .button-container {
-        margin-top: 1.5rem;
-        text-align: center;
-        /* Center the buttons */
-      }
-
-      /* Button styles */
-      .btn {
-        margin: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        background-color: #008394;
-        /* Button color matching theme */
-        color: #000000;
-        border: 2px solid #008394;
-        /* Matching border to button color */
-        border-radius: 4px;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-        transition: background-color 0.3s, color 0.3s;
-        /* Add transitions for smooth hover effect */
-      }
-
-      .btn:hover {
-        background-color: black;
-        /* On hover, background becomes transparent */
-        color: #008394;
-        /* Text color changes to match button border */
-      }
-
-      /* Adjustments for smaller screens */
-      @media (max-width: 768px) {
-        .about-container {
-          padding: 1rem;
-          width: 95%;
-          /* Adjust width for smaller screens */
-          margin: 2rem auto;
-          /* Center the container on smaller screens */
-        }
-
-        .f-2 {
-          font-size: 1.5rem;
-          /* Adjust font size for smaller screens */
-        }
-
-        .description {
-          font-size: 1rem;
-          /* Adjust font size for smaller screens */
-        }
-      }
-    </style>
-    <!-- Skills Section -->
-    <section id="skills">
+    <!-- Contact Me Section -->
+    <section id="contact" class="m-b-1">
       <br /><br />
-      <h1 class="t-center my-2 t-white f-2">Skills / スキル</h1>
-      <div class="skills-container flex s-center h-50">
-        <div class="skill-icon">
-          <img src="images/c.png" class="skill-logo" alt="C Logo" />
-        </div>
-        <div class="skill-icon">
-          <img src="images/html.webp" class="skill-logo" alt="HTML Logo" />
-        </div>
-        <div class="skill-icon">
-          <img src="images/css.png" class="skill-logo" alt="CSS Logo" />
-        </div>
-        <div class="skill-icon">
-          <img src="images/js.webp" class="skill-logo" alt="JavaScript Logo" />
-        </div>
-        <div class="skill-icon">
-          <img src="images/react.png" class="skill-logo" alt="React Logo" />
-        </div>
-        <div class="skill-icon">
-          <img src="images/node1.png" class="skill-logo" alt="node Logo" />
-        </div>
-        <div class="skill-icon">
-          <img src="images/mysql.png" class="skill-logo" alt="MySQL Logo" />
-        </div>
-        <div class="skill-icon">
-          <img src="images/mongodb.png" class="skill-logo" alt="MongoDB Logo" />
+      <h1 class="t-center my-2 t-white f-2">Contact Me / 私に連絡して</h1>
+      <div class="contact-container">
+        <div class="form">
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- Replace with your Access Key -->
+            <input type="hidden" name="access_key" value="8f9be4e1-78a7-4a2e-a4c9-65c295c0881b">
+
+            <!-- Form Inputs -->
+            <div class="form-row">
+              <div class="form-div">
+                <input type="text" name="name" id="name" class="poppins" placeholder="Your Name" required />
+              </div>
+              <div class="form-div">
+                <input type="email" name="email" id="email" class="poppins" placeholder="Your Email" required />
+              </div>
+            </div>
+            <div class="form-div">
+              <textarea name="message" id="textarea" cols="30" rows="10" class="poppins" placeholder="Your Message"
+                required></textarea>
+            </div>
+            <!-- Honeypot Spam Protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <!-- Custom Confirmation / Success Page (Optional) -->
+            <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+            <div class="submit-btn">
+              <button type="submit" class="btn poppins" id="submit">
+                Send
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education">
-      <h1 class="t-center my-2 t-white f-2">Education / 教育</h1>
-      <div class="button-container t-center">
-        <button id="toggleButton" class="toggle-button">
-          <i class="fas fa-language"></i> English / 日本語
-        </button>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item left">
-          <div class="timeline-content">
-            <i class="fas fa-school fa-2x icon"></i>
-            <div class="timeline-text">
-              <h2>2016-2019</h2>
-              <p class="en">Secondary Education</p>
-              <p class="jp">中等教育</p>
-              <p class="en">Farooqia Boys's High School, Mysuru</p>
-              <p class="jp">ファルキアボーイズ高校、マイソール</p>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-item right">
-          <div class="timeline-content">
-            <i class="fas fa-user-graduate fa-2x icon"></i>
-            <div class="timeline-text">
-              <h2>2019-2022</h2>
-              <p class="en">High School Diploma</p>
-              <p class="jp">高等学校卒業証書</p>
-              <p class="en">D.Banumiah's Polytechnic, Mysuru</p>
-              <p class="jp">D.バヌミア工業高校、マイソール</p>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-item left">
-          <div class="timeline-content">
-            <i class="fas fa-university fa-2x icon"></i>
-            <div class="timeline-text">
-              <h2>2023-2025</h2>
-              <p class="en">
-                Bachelor of Engineering (Computer Science and Engineering)
-              </p>
-              <p class="jp">
-                工学士（コンピュータサイエンスとエンジニアリング）
-              </p>
-              <p class="en">PES College Of Engineering, Mandya</p>
-              <p class="jp">PES工科大学、マンドヤ</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Projects</title>
-        <link rel="stylesheet" href="styles.css" />
-      </head>
+    <!-- Footer Section -->
+    <footer id="footer">
+      <ul class="nav-links">
+        <li><a href="#home" class="poppinss">Home</a></li>
+        <li><a href="#about" class="poppinss">About</a></li>
+        <li><a href="#skills" class="poppinss">Skills</a></li>
+        <li><a href="#education" class="poppinss">Education</a></li>
+        <li><a href="#projects" class="poppinss">Projects</a></li>
+        <li>
+          <a href="#certifications" class="poppinss">Certifications</a>
+        </li>
+        <li><a href="#contact" class="poppinss">Contact</a></li>
+      </ul>
+      <ul class="social-links">
+        <li>
+          <a href="https://www.linkedin.com/in/mohammed-faiz-pes/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Mfaiz01">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/_mfaiz_01__">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="t-center my-2 poppins">
+        &copy; All Rights Reserved -
+        <span class="cpy-white poppins">Mohammed Faiz / 全著作権所有 - モハメド・ファイズ</span>
+      </p>
+    </footer>
 
-      <body>
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-          <h1 class="t-center my-2 t-white f-2">Projects / プロジェクト</h1>
-          <div class="projects-container">
-            <!-- Project Item 1 -->
-            <div class="projects-item">
-              <div class="image-container">
-                <img src="images/p2.jpg" alt="CodePen Clone" />
-              </div>
-              <h1 class="t-white">CodePen Clone / コードペンクローン</h1>
-              <button class="toggle-btn" onclick="toggleLanguage(this)">
-                日本語に切り替え
-              </button>
-              <p class="t-white english">
-                <strong>Project:</strong> CodePen Clone<br />
-                <strong>Issue:</strong> The need for a platform that allows
-                users to write, test, and showcase HTML, CSS, and JavaScript
-                code snippets.<br />
-                <strong>Purpose:</strong> To create a tool for users to create
-                and share code snippets with live previews in an interactive
-                editor.<br />
-                <strong>Team Size:</strong> I worked on this project
-                individually.<br />
-                <strong>Role:</strong> I designed and developed the application,
-                including the editor for writing code, live preview
-                functionality, and user interface design.
-              </p>
-              <p class="t-white japanese" style="display: none">
-                <strong>プロジェクト:</strong> CodePen Clone<br />
-                <strong>問題:</strong>
-                ユーザーがHTML、CSS、JavaScriptのコードスニペットを作成、テスト、共有できるプラットフォームの必要性。<br />
-                <strong>目的:</strong>
-                インタラクティブなエディタでライブプレビュー付きのコードスニペットを作成および共有できるツールを作成すること。<br />
-                <strong>チームサイズ:</strong>
-                このプロジェクトは個人で作業しました。<br />
-                <strong>役割:</strong>
-                コードを書くためのエディタ、ライブプレビュー機能、ユーザーインターフェイスデザインを含むアプリケーションの設計と開発を担当しました。
-              </p>
-              <div class="buttons">
-                <a href="https://github.com/Mfaiz01/code-pen-clone" class="btn"
-                  >GitHub</a
-                >
-                <a
-                  href="https://mfaiz01.github.io/code-pen-clone/"
-                  class="btn live"
-                  >Live Link</a
-                >
-              </div>
-            </div>
-
-            <!-- Project Item 4 -->
-<div class="projects-item">
-  <div class="image-container">
-    <img src="images/r7.png" alt="CareerPath ATS" />
-  </div>
-  <h1 class="t-white">CareerPath ATS / キャリアパスATS</h1>
-  <button class="toggle-btn" onclick="toggleLanguage(this)">
-    日本語に切り替え
-  </button>
-  <p class="t-white english">
-    <strong>Project:</strong> CareerPath ATS<br />
-    <strong>Issue:</strong> The need for an efficient and user-friendly resume tracking system.<br />
-    <strong>Purpose:</strong> To create a resume tracking system using Python, Google Gemini Pro Vision LIM Model, and Streamlit as the framework and deployment platform.<br />
-    <strong>Team Size:</strong> I worked on this project individually.<br />
-    <strong>Role:</strong> I was responsible for designing and developing the entire application, including integrating the Google Gemini Pro Vision LIM Model with Streamlit and ensuring effective performance and usability.
-  </p>
-  <p class="t-white japanese" style="display: none">
-    <strong>プロジェクト:</strong> CareerPath ATS<br />
-    <strong>問題:</strong>
-    効率的で使いやすい履歴書追跡システムの必要性。<br />
-    <strong>目的:</strong> Python、Google Gemini Pro Vision LIM Model、Streamlitを使用して履歴書追跡システムを作成すること。<br />
-    <strong>チームサイズ:</strong>
-    このプロジェクトは個人で作業しました。<br />
-    <strong>役割:</strong>
-    Google Gemini Pro Vision LIM ModelをStreamlitと統合し、効果的なパフォーマンスと使いやすさを確保するためにアプリケーション全体の設計と開発を担当しました。
-  </p>
-  <div class="buttons">
-    <a href="https://github.com/Mfaiz01/ATS-Tracking-System" class="btn">GitHub</a>
-    <a href="https://careerpath-ats-tracking-system.streamlit.app/" class="btn live">Live Link</a>
-  </div>
-</div>
+    <script>
+      function scrolltop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
 
 
-            <!-- Project Item 2 -->
-            <div class="projects-item">
-              <div class="image-container">
-                <img src="images/f5.png" alt="College Website" />
-              </div>
-              <h1 class="t-white">College Website / 大学のウェブサイト</h1>
-              <button class="toggle-btn" onclick="toggleLanguage(this)">
-                日本語に切り替え
-              </button>
-              <p class="t-white english">
-                <strong>Project:</strong> College Website<br />
-                <strong>Issue:</strong> The need for a comprehensive and
-                interactive website for a college.<br />
-                <strong>Purpose:</strong> To build a functional and
-                aesthetically pleasing college website using React.js, HTML5,
-                Tailwind CSS, JavaScript, and Bootstrap.<br />
-                <strong>Team Size:</strong> I worked on this project
-                individually.<br />
-                <strong>Role:</strong> I handled the design and development of
-                the website, including the implementation of interactive
-                elements, responsive design, and integration of various
-                technologies.
-              </p>
-              <p class="t-white japanese" style="display: none">
-                <strong>プロジェクト:</strong> 大学のウェブサイト<br />
-                <strong>問題:</strong>
-                大学のための包括的でインタラクティブなウェブサイトの必要性。<br />
-                <strong>目的:</strong> React.js、HTML5、Tailwind
-                CSS、JavaScript、およびBootstrapを使用して機能的で美しい大学のウェブサイトを構築すること。<br />
-                <strong>チームサイズ:</strong>
-                このプロジェクトは個人で作業しました。<br />
-                <strong>役割:</strong>
-                インタラクティブな要素、レスポンシブデザインの実装、およびさまざまな技術の統合を含むウェブサイトのデザインと開発を担当しました。
-              </p>
-              <div class="buttons">
-                <a href="https://github.com/Mfaiz01/Tech-Turtles" class="btn"
-                  >GitHub</a
-                >
-                <a
-                  href="https://mfaiz01.github.io/Tech-Turtles/"
-                  class="btn live"
-                  >Live Link</a
-                >
-              </div>
-            </div>
+    </script>
 
-            <!-- Project Item 3 -->
-            <div class="projects-item">
-              <div class="image-container">
-                <img src="images/p5.png" alt="SpacePortfolio" />
-              </div>
-              <h1 class="t-white">SpacePortfolio / スペースポートフォリオ</h1>
-              <button class="toggle-btn" onclick="toggleLanguage(this)">
-                日本語に切り替え
-              </button>
-              <p class="t-white english">
-                <strong>Project:</strong> SpacePortfolio<br />
-                <strong>Issue:</strong> The need for a modern and responsive
-                portfolio to showcase projects and experiences.<br />
-                <strong>Purpose:</strong> To create a visually appealing and
-                well-organized portfolio using Next.js, HTML5, Tailwind CSS,
-                JavaScript, and TypeScript.<br />
-                <strong>Team Size:</strong> I worked on this project
-                individually.<br />
-                <strong>Role:</strong> I was responsible for designing and
-                developing the entire application, including layout, performance
-                optimization, and integrating the technologies.
-              </p>
-              <p class="t-white japanese" style="display: none">
-                <strong>プロジェクト:</strong> SpacePortfolio<br />
-                <strong>問題:</strong>
-                プロジェクトと経験を紹介するためのモダンでレスポンシブなポートフォリオの必要性。<br />
-                <strong>目的:</strong> Next.js、HTML5、Tailwind
-                CSS、JavaScript、TypeScriptを使用して視覚的に魅力的で整理されたポートフォリオを作成すること。<br />
-                <strong>チームサイズ:</strong>
-                このプロジェクトは個人で作業しました。<br />
-                <strong>役割:</strong>
-                レイアウト、パフォーマンスの最適化、技術の統合を含むアプリケーション全体の設計と開発を担当しました。
-              </p>
-              <div class="buttons">
-                <a href="https://github.com/Mfaiz01/Portfolio" class="btn"
-                  >GitHub</a
-                >
-                <a
-                  href="https://portfolio-iyxs0qnm0-mfaiz01s-projects.vercel.app/"
-                  class="btn live"
-                  >Live Link</a
-                >
-              </div>
-            </div>
-
-            <!-- Project Item 4 -->
-            <div class="projects-item">
-              <div class="image-container">
-                <img
-                  id="image-chatterpro"
-                  src="images/p3.png"
-                  alt="ChatterPro"
-                />
-                <video
-                  id="video-chatterpro"
-                  class="project-video"
-                  style="display: none"
-                  controls
-                >
-                  <source src="images/r2.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <h1 class="t-white">ChatterPro / チャタープロ</h1>
-              <button class="toggle-btn" onclick="toggleLanguage(this)">
-                日本語に切り替え
-              </button>
-              <p class="t-white english">
-                <strong>Project:</strong> ChatterPro<br />
-                <strong>Issue:</strong> The need for a real-time messaging
-                application to facilitate seamless communication.<br />
-                <strong>Purpose:</strong> To build a chat application with
-                real-time messaging, user authentication, and chat
-                functionalities using React.js and ChatEngine.io.<br />
-                <strong>Team Size:</strong> I worked on this project
-                individually.<br />
-                <strong>Role:</strong> I developed the frontend using React.js,
-                designed the user interface with Tailwind CSS, and integrated
-                real-time messaging and authentication features.
-              </p>
-              <p class="t-white japanese" style="display: none">
-                <strong>プロジェクト:</strong> ChatterPro<br />
-                <strong>問題:</strong>
-                シームレスなコミュニケーションを促進するためのリアルタイムメッセージングアプリケーションの必要性。<br />
-                <strong>目的:</strong>
-                React.jsとChatEngine.ioを使用してリアルタイムメッセージング、ユーザー認証、チャット機能を備えたチャットアプリケーションを構築すること。<br />
-                <strong>チームサイズ:</strong>
-                このプロジェクトは個人で作業しました。<br />
-                <strong>役割:</strong>
-                React.jsを使用してフロントエンドを開発し、Tailwind
-                CSSでユーザーインターフェイスをデザインし、リアルタイムメッセージングと認証機能を統合しました。
-              </p>
-              <div class="buttons">
-                <a
-                  href="https://github.com/Mfaiz01/Chat-Application"
-                  class="btn"
-                  >GitHub</a
-                >
-                <button
-                  class="btn live"
-                  onclick="playVideo('image-chatterpro', 'video-chatterpro')"
-                >
-                Video Preview
-                </button>
-              </div>
-            </div>
-
-            <!-- Project Item 5 -->
-            <div class="projects-item">
-              <div class="image-container">
-                <img
-                  id="image-miniurl"
-                  src="images/pp5.png"
-                  alt="MiniURL URL Shortener"
-                />
-                <video
-                  id="video-miniurl"
-                  class="project-video"
-                  style="display: none"
-                  controls
-                >
-                  <source src="images/r1.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <h1 class="t-white">MiniURL URL Shortener / ミニURL</h1>
-              <button class="toggle-btn" onclick="toggleLanguage(this)">
-                日本語に切り替え
-              </button>
-              <p class="t-white english">
-                <strong>Project:</strong> MiniURL URL Shortener<br />
-                <strong>Issue:</strong> The need for a reliable and efficient
-                URL shortener to manage long URLs.<br />
-                <strong>Purpose:</strong> To build a URL shortener application
-                with functionalities for creating and managing shortened URLs
-                using Python and Django.<br />
-                <strong>Team Size:</strong> I worked on this project
-                individually.<br />
-                <strong>Role:</strong> I developed the backend using Python and
-                Django, designed the user interface with HTML5 and Tailwind CSS,
-                and implemented features for URL shortening and management.
-              </p>
-              <p class="t-white japanese" style="display: none">
-                <strong>プロジェクト:</strong> ミニURL<br />
-                <strong>問題:</strong>
-                長いURLを管理するための信頼性が高く効率的なURL短縮ツールの必要性。<br />
-                <strong>目的:</strong>
-                PythonとDjangoを使用して、URLの短縮と管理の機能を備えたURL短縮アプリケーションを構築すること。<br />
-                <strong>チームサイズ:</strong>
-                このプロジェクトは個人で作業しました。<br />
-                <strong>役割:</strong>
-                PythonとDjangoを使用してバックエンドを開発し、HTML5とTailwind
-                CSSでユーザーインターフェイスをデザインし、URL短縮と管理の機能を実装しました。
-              </p>
-              <div class="buttons">
-                <a href="https://github.com/Mfaiz01/MiniURL" class="btn"
-                  >GitHub</a
-                >
-                <button
-                  class="btn live"
-                  onclick="playVideo('image-miniurl', 'video-miniurl')"
-                >
-                Video Preview
-                </button>
-              </div>
-            </div>
-
-         
-
-            <!-- Project Item 6 -->
-<div class="projects-item">
-  <div class="image-container">
-    <img id="image-tictactoe" src="images/p4.png" alt="Tic-Tac-Toe Game" />
-    <video id="video-tictactoe" class="project-video" style="display: none;" controls>
-      <source src="images/r3.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  <h1 class="t-white">Tic-Tac-Toe Game / 三目並べゲーム</h1>
-  <button class="toggle-btn" onclick="toggleLanguage(this)">
-    日本語に切り替え
-  </button>
-  <p class="t-white english">
-    <strong>Project:</strong> Tic-Tac-Toe Game<br />
-    <strong>Issue:</strong> The need for a simple console-based game that allows two players to compete.<br />
-    <strong>Purpose:</strong> To implement a classic Tic-Tac-Toe game in C with features such as move validation, win detection, and draw condition.<br />
-    <strong>Team Size:</strong> I worked on this project individually.<br />
-    <strong>Role:</strong> I developed the game logic and user interface in C, ensuring functionality for move validation, win detection, and handling user input.
-  </p>
-  <p class="t-white japanese" style="display: none">
-    <strong>プロジェクト:</strong> 三目並べゲーム<br />
-    <strong>問題:</strong> 2人のプレイヤーが競い合うことができるシンプルなコンソールベースのゲームの必要性。<br />
-    <strong>目的:</strong> Cでクラシックな三目並べゲームを実装し、移動の検証、勝利の検出、引き分け条件などの機能を含めること。<br />
-    <strong>チームサイズ:</strong> このプロジェクトは個人で作業しました。<br />
-    <strong>役割:</strong> Cでゲームロジックとユーザーインターフェイスを開発し、移動の検証、勝利の検出、ユーザー入力の処理を実装しました。
-  </p>
-  <div class="buttons">
-    <a href="https://github.com/Mfaiz01/Tic-Tac-toe-game" class="btn">GitHub</a>
-    <button class="btn live" onclick="playVideo('image-tictactoe', 'video-tictactoe')">Video Preview</button>
-  </div>
-</div>
-
-        </section>
-
-        <script>
-          function playVideo(imageId, videoId) {
-const image = document.getElementById(imageId);
-const video = document.getElementById(videoId);
-
-if (image && video) {
-  image.style.display = 'none';
-  video.style.display = 'block';
-  video.play();
-}
-}
-
-function toggleLanguage(button) {
-const projectItem = button.closest('.projects-item');
-const englishText = projectItem.querySelector('.english');
-const japaneseText = projectItem.querySelector('.japanese');
-
-if (englishText.style.display === 'none') {
-  englishText.style.display = 'block';
-  japaneseText.style.display = 'none';
-  button.textContent = '日本語に切り替え';
-} else {
-  englishText.style.display = 'none';
-  japaneseText.style.display = 'block';
-  button.textContent = '英語に切り替え';
-}
-}
-
-          </script>
-        <style>
-          .project-video {
-            width: 100%;
-            height: auto;
-            display: block;
-          }
-        </style>
-
-        <script>
-          function toggleLanguage(button) {
-            const projectItem = button.parentElement;
-            const englishText = projectItem.querySelector(".english");
-            const japaneseText = projectItem.querySelector(".japanese");
-
-            if (englishText.style.display === "none") {
-              englishText.style.display = "block";
-              japaneseText.style.display = "none";
-              button.textContent = "英語に切り替え";
-            } else {
-              englishText.style.display = "none";
-              japaneseText.style.display = "block";
-              button.textContent = "English";
-            }
-          }
-
-          document.addEventListener("DOMContentLoaded", () => {
-            const projectsSection = document.querySelector("#projects");
-
-            // Function to handle adding the 'visible' class
-            const handleScroll = () => {
-              const sectionTop = projectsSection.getBoundingClientRect().top;
-              const viewportHeight = window.innerHeight;
-
-              if (sectionTop < viewportHeight * 0.8) {
-                projectsSection.classList.add("visible");
-              }
-            };
-
-            // Listen for scroll events
-            window.addEventListener("scroll", handleScroll);
-
-            // Trigger the scroll handler on page load
-            handleScroll();
-          });
-
-          document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener("click", function (e) {
-              e.preventDefault();
-
-              const targetId = this.getAttribute("href").substring(1);
-              const targetSection = document.getElementById(targetId);
-
-              if (targetSection) {
-                window.scrollTo({
-                  top: targetSection.offsetTop,
-                  behavior: "smooth",
-                });
-
-                // Add the visible class after scrolling to the section
-                setTimeout(() => {
-                  targetSection.classList.add("visible");
-                }, 500); // Delay to match the scroll animation
-              }
-            });
-          });
-        </script>
-        <!-- Certification Section -->
-        <section id="certifications">
-          <br />
-          <h1 class="t-white f-2">Certifications / 認証<br /><br /></h1>
-          <div class="button-container t-center">
-            <button id="toggleCertButton" class="toggle-button">
-              <i class="fas fa-language"></i> English / 日本語
-            </button>
-          </div>
-          <div class="certifications-container">
-            <div class="certification-item">
-              <img
-                class="certification-image"
-                src="images/c2.jpg"
-                alt="Android Developer Virtual Internship"
-              />
-              <div class="certification-details">
-                <h2 class="cert-en">Android Developer Virtual Internship</h2>
-                <h2 class="cert-jp">Android開発者仮想インターンシップ</h2>
-                <p class="cert-en">Issued by AICTE - EduSkills</p>
-                <p class="cert-jp">発行者 AICTE - EduSkills</p>
-              </div>
-            </div>
-            <div class="certification-item">
-              <img
-                class="certification-image"
-                src="images/c5.jpg"
-                alt="AI-ML Virtual Internship"
-              />
-              <div class="certification-details">
-                <h2 class="cert-en">AI-ML Virtual Internship</h2>
-                <h2 class="cert-jp">AI-ML仮想インターンシップ</h2>
-                <p class="cert-en">Issued by AICTE - EduSkills</p>
-                <p class="cert-jp">発行者 AICTE - EduSkills</p>
-              </div>
-            </div>
-            <div class="certification-item">
-              <img
-                class="certification-image"
-                src="images/c1.jpg"
-                alt="Web technology"
-              />
-              <div class="certification-details">
-                <h2 class="cert-en">Web technology</h2>
-                <h2 class="cert-jp">ウェブ技術</h2>
-                <p class="cert-en">Issued by Rareminds</p>
-                <p class="cert-jp">発行者 Rareminds</p>
-              </div>
-            </div>
-            <div class="certification-item">
-              <img
-                class="certification-image"
-                src="images/c3.jpg"
-                alt="Lanqill - English Language - Level 1"
-              />
-              <div class="certification-details">
-                <h2 class="cert-en">Lanqill - English Language - Level 1</h2>
-                <h2 class="cert-jp">Lanqill - 英語 - レベル 1</h2>
-                <p class="cert-en">Issued by Lanqill</p>
-                <p class="cert-jp">発行者 Lanqill</p>
-              </div>
-            </div>
-            <div class="certification-item">
-              <img
-                class="certification-image"
-                src="images/c4.jpg"
-                alt="Lanqill - English Language - Level 2"
-              />
-              <div class="certification-details">
-                <h2 class="cert-en">Lanqill - English Language - Level 2</h2>
-                <h2 class="cert-jp">Lanqill - 英語 - レベル 2</h2>
-                <p class="cert-en">Issued by Lanqill</p>
-                <p class="cert-jp">発行者 Lanqill</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <script>
-          document
-            .getElementById("toggleButton")
-            .addEventListener("click", function () {
-              const enElements = document.querySelectorAll("#education .en");
-              const jpElements = document.querySelectorAll("#education .jp");
-              enElements.forEach(
-                (el) =>
-                  (el.style.display =
-                    el.style.display === "none" ? "block" : "none")
-              );
-              jpElements.forEach(
-                (el) =>
-                  (el.style.display =
-                    el.style.display === "none" ? "block" : "none")
-              );
-            });
-
-          document
-            .getElementById("toggleCertButton")
-            .addEventListener("click", function () {
-              const certEnElements = document.querySelectorAll(".cert-en");
-              const certJpElements = document.querySelectorAll(".cert-jp");
-              certEnElements.forEach(
-                (el) =>
-                  (el.style.display =
-                    el.style.display === "none" ? "block" : "none")
-              );
-              certJpElements.forEach(
-                (el) =>
-                  (el.style.display =
-                    el.style.display === "none" ? "block" : "none")
-              );
-            });
-
-          // Initialize by showing English text and hiding Japanese text for both sections
-          window.onload = function () {
-            const eduEnElements = document.querySelectorAll("#education .en");
-            const eduJpElements = document.querySelectorAll("#education .jp");
-            const certEnElements = document.querySelectorAll(".cert-en");
-            const certJpElements = document.querySelectorAll(".cert-jp");
-
-            eduEnElements.forEach((el) => (el.style.display = "block"));
-            eduJpElements.forEach((el) => (el.style.display = "none"));
-            certEnElements.forEach((el) => (el.style.display = "block"));
-            certJpElements.forEach((el) => (el.style.display = "none"));
-          };
-        </script>
-
-      <!-- Contact Me Section -->
-<section id="contact" class="m-b-1">
-  <br /><br />
-  <h1 class="t-center my-2 t-white f-2">Contact Me / 私に連絡して</h1>
-  <div class="contact-container">
-    <div class="form">
-      <form action="https://api.web3forms.com/submit" method="POST">
-        <!-- Replace with your Access Key -->
-        <input type="hidden" name="access_key" value="8f9be4e1-78a7-4a2e-a4c9-65c295c0881b">
-
-        <!-- Form Inputs -->
-        <div class="form-row">
-          <div class="form-div">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              class="poppins"
-              placeholder="Your Name"
-              required
-            />
-          </div>
-          <div class="form-div">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              class="poppins"
-              placeholder="Your Email"
-              required
-            />
-          </div>
-        </div>
-        <div class="form-div">
-          <textarea
-            name="message"
-            id="textarea"
-            cols="30"
-            rows="10"
-            class="poppins"
-            placeholder="Your Message"
-            required
-          ></textarea>
-        </div>
-        <!-- Honeypot Spam Protection -->
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-        <!-- Custom Confirmation / Success Page (Optional) -->
-        <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
-
-        <div class="submit-btn">
-          <button type="submit" class="btn poppins" id="submit">
-            Send
-          </button>
-        </div>
-      </form>
+    <div id="scroll-top" onclick="scrolltop()">
+      <span><i class="fa-solid fa-arrow-up"></i></span>
     </div>
-  </div>
-</section>
-
-
-        <!-- Footer Section -->
-        <footer id="footer">
-          <ul class="nav-links">
-            <li><a href="#home" class="poppinss">Home</a></li>
-            <li><a href="#about" class="poppinss">About</a></li>
-            <li><a href="#skills" class="poppinss">Skills</a></li>
-            <li><a href="#education" class="poppinss">Education</a></li>
-            <li><a href="#projects" class="poppinss">Projects</a></li>
-            <li>
-              <a href="#certifications" class="poppinss">Certifications</a>
-            </li>
-            <li><a href="#contact" class="poppinss">Contact</a></li>
-          </ul>
-          <ul class="social-links">
-            <li>
-              <a href="https://www.linkedin.com/in/mohammed-faiz-pes/">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/Mfaiz01">
-                <i class="fab fa-github"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/_mfaiz_01__">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
-          </ul>
-          <p class="t-center my-2 poppins">
-            &copy; All Rights Reserved -
-            <span class="cpy-white poppins"
-              >Mohammed Faiz / 全著作権所有 - モハメド・ファイズ</span
-            >
-          </p>
-        </footer>
-
-        <script>
-          function scrolltop() {
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-          }
-
-
-        </script>
-
-        <div id="scroll-top" onclick="scrolltop()">
-          <span><i class="fa-solid fa-arrow-up"></i></span>
-        </div>
-      </body>
-      <script src="/script.js"></script>
-    </html>
   </body>
+  <script src="/script.js"></script>
+
+  </html>
+</body>
+
 </html>
