@@ -1,25 +1,11 @@
-name: Deploy to EC2
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: SSH into EC2 and deploy
-        uses: appleboy/ssh-action@v0.1.6
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            cd ~/docker-project
-            git pull origin main
-            docker build -t my-portfolio .
-            docker stop portfolio || true
-            docker rm portfolio || true
-            docker run -d -p 80:80 --name portfolio --restart always my-portfolio
+script: |
+  cd ~
+  if [ ! -d "docker-project" ]; then
+    git clone https://github.com/Mfaiz01/MyPortfolio.git docker-project
+  fi
+  cd docker-project
+  git pull origin main
+  docker build -t my-portfolio .
+  docker stop portfolio || true
+  docker rm portfolio || true
+  docker run -d -p 80:80 --name portfolio --restart always my-portfolio
